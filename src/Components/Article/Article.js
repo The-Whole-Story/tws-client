@@ -63,6 +63,7 @@ function Article() {
           name="long arrow alternate down"
         />
       </div>
+
       <ArticleModal vote={vote} modal={modal} closeModal={closeModal} />
     </Container>
   );
