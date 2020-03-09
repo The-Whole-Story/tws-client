@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Header, Container, Input, Divider, Form } from "semantic-ui-react";
 
 function SearchInput({ updateSearchTerm }) {
+  const history = useHistory();
   const [inputValue, setInputValue] = React.useState("");
   const handleSearchChange = event => {
     setInputValue(event.target.value);
@@ -10,6 +12,7 @@ function SearchInput({ updateSearchTerm }) {
     event.preventDefault();
     updateSearchTerm(inputValue);
     setInputValue("");
+    history.push("/SearchTopic");
   };
   return (
     <React.Fragment>
