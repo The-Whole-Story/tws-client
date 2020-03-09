@@ -1,7 +1,7 @@
 import React from "react";
 import { Header, Container, Card } from "semantic-ui-react";
 
-function CategoryLP({ title }) {
+function Topic({ title }) {
   return (
     <React.Fragment>
       <Container>
@@ -39,4 +39,4 @@ function CategoryLP({ title }) {
   );
 }
 
-export default CategoryLP;
+export default Topic;

@@ -1,13 +1,13 @@
 import React from "react";
-import CategoryLP from "./CategoryLP";
+import Topic from "./Topic";
 import { Header, Container } from "semantic-ui-react";
 
 function LandingPage() {
   return (
     <React.Fragment>
-      <CategoryLP title={"Trending"} />
-      <CategoryLP title={"Cat 2"} />
-      <CategoryLP title={"Cat 3"} />
+      <Topic title={"Trending"} />
+      <Topic title={"Topic 2"} />
+      <Topic title={"Topic 3"} />
     </React.Fragment>
   );
 }

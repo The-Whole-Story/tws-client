@@ -24,6 +24,7 @@ function Header() {
               ABOUT US
             </Link>
           </div>
+
           <div className="ui  item">
             <Link to={`/basics`} className="text">
               101
