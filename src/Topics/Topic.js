@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SubTopic from "./SubTopic";
 import { Header, Container, Card } from "semantic-ui-react";
 
 function Topic({ title }) {

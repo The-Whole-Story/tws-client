@@ -52,6 +52,7 @@ function Article() {
         accompanied by English versions from the 1914 translation by H. Rackham.
       </p>
       <div style={{ textAlign: "center", paddingTop: "10px" }}>
+        <Header as="h5">Up or Down vote to see who wrote the article</Header>
         <Icon
           onClick={() => handleClickArrow("Up")}
           size="big"
