@@ -1,13 +1,14 @@
 import React from "react";
 import Header from "./Components/Header";
 import SearchInput from "./Components/SearchInput";
+import { Container } from "semantic-ui-react";
 
 function App() {
   return (
-    <div>
+    <Container>
       <Header />
       <SearchInput />
-    </div>
+    </Container>
   );
 }
 

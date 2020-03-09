@@ -1,11 +1,8 @@
 import React from "react";
+import { Nav, Navbar, NavItem, Col, Row } from "react-bootstrap";
 
 function Header() {
-  return (
-    <div>
-      <h1>Header JS</h1>
-    </div>
-  );
+  return <div>Header</div>;
 }
 
 export default Header;
