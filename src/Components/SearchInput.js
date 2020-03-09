@@ -1,25 +1,32 @@
 import React, { useState } from "react";
-import { Header, Container, Input, Divider } from "semantic-ui-react";
+import { Header, Container, Input, Divider, Form } from "semantic-ui-react";
 
-function SearchInput() {
-  const [searchTerm, setSearchTerm] = React.useState("");
+function SearchInput({ updateSearchTerm }) {
+  const [inputValue, setInputValue] = React.useState("");
   const handleSearchChange = event => {
-    setSearchTerm(event.target.value);
+    setInputValue(event.target.value);
+  };
+  const handleOnSubmit = event => {
+    event.preventDefault();
+    updateSearchTerm(inputValue);
+    setInputValue("");
   };
   return (
     <React.Fragment>
       <Container textAlign="center">
-        <Header style={{ marginTop: "20px" }}>
-          <Input
-            // loading={searchLoading}
-            onChange={handleSearchChange}
-            value={searchTerm}
-            size="mini"
-            icon="search"
-            name="searchTerm"
-            placeholder="Search Articles"
-          />
-        </Header>
+        <Form onSubmit={handleOnSubmit}>
+          <Header style={{ marginTop: "20px" }}>
+            <Input
+              // loading={searchLoading}
+              value={inputValue}
+              onChange={handleSearchChange}
+              size="mini"
+              icon="search"
+              name="searchTerm"
+              placeholder="Search Articles"
+            />
+          </Header>
+        </Form>
       </Container>
       <Divider />
     </React.Fragment>
