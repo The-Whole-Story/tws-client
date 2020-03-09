@@ -4,6 +4,7 @@ import LandingPage from "./Components/LandingPage";
 import SearchInput from "./Components/SearchInput";
 import SocialHeader from "./Components/SocialHeader";
 import { Container } from "semantic-ui-react";
+import "./App.css";
 
 function App() {
   return (
