@@ -7,6 +7,7 @@ import SocialHeader from "./Components/SocialHeader";
 import SearchTopic from "./Components/SearchTopic";
 import AboutUs from "./Components/StaticPages/AboutUs";
 import Basics from "./Components/StaticPages/Basics";
+import Article from "./Components/Article";
 
 import "./App.css";
 
@@ -30,6 +31,7 @@ function App() {
       />
       <Route path="/about" component={AboutUs} />
       <Route path="/basics" component={Basics} />
+      <Route path="/article" component={Article} />
     </Router>
   );
 }
