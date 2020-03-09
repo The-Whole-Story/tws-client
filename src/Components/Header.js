@@ -1,11 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../LOGO-whole-story.png";
 import { Divider, Image } from "semantic-ui-react";
 
 function Header() {
   return (
     <React.Fragment>
-      <Image src={Logo} centered />
+      <Link to={`/`} className="text">
+        <Image src={Logo} centered />{" "}
+      </Link>
+
       <div
         className="ui borderless menu"
         style={{
@@ -16,10 +20,14 @@ function Header() {
       >
         <div className="ui centered grid container">
           <div className="ui item">
-            <div className="text">ABOUT US</div>
+            <Link to={`/about`} className="text">
+              ABOUT US
+            </Link>
           </div>
           <div className="ui  item">
-            <div className="text">101</div>
+            <Link to={`/basics`} className="text">
+              101
+            </Link>
           </div>
         </div>
       </div>
