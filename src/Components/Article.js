@@ -1,9 +1,10 @@
 import React from "react";
-import { Container, Header } from "semantic-ui-react";
+import { Container, Header, Icon } from "semantic-ui-react";
 
 function Article() {
+  const handleClickArrow = direction => {};
   return (
-    <Container textAlign="centered">
+    <Container text textAlign="centered">
       <Header as="h2">Article</Header>
       <p>
         What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
@@ -40,6 +41,18 @@ function Article() {
         Malorum" by Cicero are also reproduced in their exact original form,
         accompanied by English versions from the 1914 translation by H. Rackham.
       </p>
+      <div style={{ textAlign: "center", paddingTop: "10px" }}>
+        <Icon
+          onClick={() => handleClickArrow("up")}
+          size="big"
+          name="long arrow alternate up"
+        />
+        <Icon
+          onClick={() => handleClickArrow("down")}
+          size="big"
+          name="long arrow alternate down"
+        />
+      </div>
     </Container>
   );
 }
