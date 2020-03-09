@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import ArticleModal from "./ArticleModal";
 import { Container, Header, Icon } from "semantic-ui-react";
 
 function Article() {
-  const handleClickArrow = direction => {};
+  const [modal, setModal] = useState(false);
+  const [vote, setVote] = useState("");
+
+  const openModal = () => setModal(true);
+  const closeModal = () => setModal(false);
+
+  const handleClickArrow = direction => {
+    setVote(direction);
+    openModal();
+  };
   return (
     <Container text textAlign="centered">
       <Header as="h2">Article</Header>
@@ -43,16 +53,17 @@ function Article() {
       </p>
       <div style={{ textAlign: "center", paddingTop: "10px" }}>
         <Icon
-          onClick={() => handleClickArrow("up")}
+          onClick={() => handleClickArrow("Up")}
           size="big"
           name="long arrow alternate up"
         />
         <Icon
-          onClick={() => handleClickArrow("down")}
+          onClick={() => handleClickArrow("Down")}
           size="big"
           name="long arrow alternate down"
         />
       </div>
+      <ArticleModal vote={vote} modal={modal} closeModal={closeModal} />
     </Container>
   );
 }

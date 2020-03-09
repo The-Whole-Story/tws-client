@@ -7,7 +7,7 @@ import SocialHeader from "./Components/SocialHeader";
 import SearchTopic from "./Components/SearchTopic";
 import AboutUs from "./Components/StaticPages/AboutUs";
 import Basics from "./Components/StaticPages/Basics";
-import Article from "./Components/Article";
+import Article from "./Components/Article/Article";
 
 import "./App.css";
 
