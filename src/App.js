@@ -23,7 +23,11 @@ function App() {
       <Header />
       <SearchInput updateSearchTerm={updateSearchTerm} />
       <Route exact path="/" component={LandingPage} />
-      <Route exact path="/searchTopic" component={SearchTopic} />
+      <Route
+        exact
+        path="/searchTopic"
+        component={() => <SearchTopic searchTerm={searchTerm} />}
+      />
       <Route path="/about" component={AboutUs} />
       <Route path="/basics" component={Basics} />
     </Router>
