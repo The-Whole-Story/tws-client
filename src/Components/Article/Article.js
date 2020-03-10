@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ArticleModal from "./ArticleModal";
 import { Container, Header, Icon } from "semantic-ui-react";
 
-function Article() {
+function Article(props) {
   const [modal, setModal] = useState(false);
   const [vote, setVote] = useState("");
 
@@ -14,7 +14,8 @@ function Article() {
     openModal();
   };
   return (
-    <Container text textAlign="centered">
+    <Container text textAlign="center">
+      {console.log(props.location)}
       <Header as="h2">Article</Header>
       <p>
         What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
@@ -51,7 +52,7 @@ function Article() {
         Malorum" by Cicero are also reproduced in their exact original form,
         accompanied by English versions from the 1914 translation by H. Rackham.
       </p>
-      <div style={{ textAlign: "center", paddingTop: "10px" }}>
+      <div style={{ paddingTop: "10px" }}>
         <Header as="h5">Up or Down vote to see who wrote the article</Header>
         <Icon
           onClick={() => handleClickArrow("Up")}
