@@ -19,7 +19,7 @@ function Header() {
         pointing
         secondary
         fluid
-        widths={6}
+        widths={10}
       >
         <Menu.Item
           as={Link}
