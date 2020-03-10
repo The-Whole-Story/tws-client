@@ -1,8 +1,7 @@
 import React from "react";
-import mime from "mime-types";
 import { Modal, Image, Progress, Icon, Header } from "semantic-ui-react";
 
-function ArticleModal({ modal, closeModal, vote }) {
+function NextArticleModal({ modal, closeModal, vote }) {
   return (
     <Modal open={modal} onClose={closeModal}>
       <Modal.Header>The source of this article is BBC</Modal.Header>
@@ -32,4 +31,4 @@ function ArticleModal({ modal, closeModal, vote }) {
     </Modal>
   );
 }
-export default ArticleModal;
+export default NextArticleModal;

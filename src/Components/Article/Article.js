@@ -1,18 +1,32 @@
-import React, { useState } from "react";
-import ArticleModal from "./ArticleModal";
+import React, { useState, useEffect } from "react";
+import NextArticleModal from "./NextArticleModal";
+import ArticleCountModal from "./ArticleCountModal";
 import { Container, Header, Icon } from "semantic-ui-react";
 
 function Article(props) {
-  const [modal, setModal] = useState(false);
+  const [modalNext, setModalNext] = useState(false);
+  const [modalCount, setModalCount] = useState(false);
+
   const [vote, setVote] = useState("");
 
-  const openModal = () => setModal(true);
-  const closeModal = () => setModal(false);
+  const openModalNext = () => setModalNext(true);
+  const closeModalNext = () => setModalNext(false);
+
+  const openModalCount = () => setModalCount(true);
+  const closeModalCount = () => setModalCount(false);
 
   const handleClickArrow = direction => {
     setVote(direction);
-    openModal();
+    openModalNext();
   };
+  useEffect(() => {
+    const count = JSON.parse(localStorage.getItem("count"));
+    if (!count) {
+      openModalCount();
+    }
+    // if there is a count API call to recieve first article
+  });
+
   return (
     <Container text textAlign="center">
       {console.log(props.location)}
@@ -66,7 +80,17 @@ function Article(props) {
         />
       </div>
 
-      <ArticleModal vote={vote} modal={modal} closeModal={closeModal} />
+      <NextArticleModal
+        vote={vote}
+        modal={modalNext}
+        closeModal={closeModalNext}
+      />
+      <ArticleCountModal
+        header="How many articles to get the whole story?"
+        description="To continue please enter the number of articles you would like to be served"
+        modal={modalCount}
+        closeModal={closeModalCount}
+      />
     </Container>
   );
 }

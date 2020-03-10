@@ -1,10 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Header, Container, Card } from "semantic-ui-react";
 import SubTopic from "./SubTopic";
 
 function Topic({ title }) {
   const history = useHistory();
+  // for future animation
   let [clicked, setClick] = useState(false);
 
   const handleOnClick = () => {
@@ -17,6 +18,10 @@ function Topic({ title }) {
       state: { detail: "detail" }
     });
   };
+
+  useEffect(() => {
+    // App Api call based on in coming prop
+  });
 
   return (
     <React.Fragment>

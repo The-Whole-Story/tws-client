@@ -2,13 +2,22 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../LOGO-whole-story.png";
 import { Image, Menu, Dropdown } from "semantic-ui-react";
+import ArticleCountModal from "../Article/ArticleCountModal";
 
 function Header() {
   const [activeItem, setActiveItem] = useState("");
+  const [modalCount, setModalCount] = useState(false);
 
   const handleItemClick = active => {
     setActiveItem(active);
+    if (active === "Account") {
+      openModalCount();
+    }
   };
+
+  const openModalCount = () => setModalCount(true);
+  const closeModalCount = () => setModalCount(false);
+
   return (
     <React.Fragment>
       <Link to={`/`} className="text" onClick={() => handleItemClick("")}>
@@ -30,9 +39,9 @@ function Header() {
         />
 
         <Menu.Item
-          name="Menu 1"
-          active={activeItem === "Contact"}
-          onClick={() => handleItemClick("Contact")}
+          name="Edit"
+          active={activeItem === "Account"}
+          onClick={() => handleItemClick("Account")}
         />
         <Dropdown
           text="Poltics 101"
@@ -53,6 +62,12 @@ function Header() {
           </Dropdown.Menu>
         </Dropdown>
       </Menu>
+      <ArticleCountModal
+        header="Edit the number of articles"
+        description="To continue please enter the number of articles you would like to be served"
+        modal={modalCount}
+        closeModal={closeModalCount}
+      />
     </React.Fragment>
   );
 }
