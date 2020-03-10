@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../LOGO-whole-story.png";
+import Logo from "../../TWS-main-logo.png";
 import { Image, Menu, Dropdown } from "semantic-ui-react";
 import ArticleCountModal from "../Article/ArticleCountModal";
 

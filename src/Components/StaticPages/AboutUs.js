@@ -1,10 +1,67 @@
 import React from "react";
-import { Container, Header } from "semantic-ui-react";
+import {
+  Container,
+  Header,
+  Card,
+  Image,
+  Grid,
+  Divider
+} from "semantic-ui-react";
 
 function AboutUs() {
   return (
     <Container text textAlign="centered">
       <Header as="h2">ABOUT US</Header>
+      <Grid columns={3} divided>
+        <Grid.Row>
+          <Grid.Column>
+            <Card>
+              <Image
+                src="https://react.semantic-ui.com/images/avatar/large/rachel.png"
+                wrapped
+                ui={false}
+              />
+              <Card.Content>
+                Talia Bahar
+                <Card.Meta>
+                  <span className="date">Lead UX/UI</span>
+                </Card.Meta>
+              </Card.Content>
+            </Card>
+          </Grid.Column>
+          <Grid.Column>
+            <Card>
+              <Image
+                src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
+                wrapped
+                ui={false}
+              />
+              <Card.Content>
+                Marco Berardini
+                <Card.Meta>
+                  <span className="date">Product Owner</span>
+                </Card.Meta>
+              </Card.Content>
+            </Card>
+          </Grid.Column>
+          <Grid.Column>
+            <Card>
+              <Image
+                src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg"
+                wrapped
+                ui={false}
+              />
+              <Card.Content>
+                Anacan Mangelsdorf
+                <Card.Meta>
+                  <span className="date">Scrum Master</span>
+                </Card.Meta>
+              </Card.Content>
+            </Card>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+      <Divider></Divider>
       <p>
         What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
         and typesetting industry. Lorem Ipsum has been the industry's standard
