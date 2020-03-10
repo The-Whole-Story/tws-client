@@ -37,7 +37,6 @@ function Header() {
           active={activeItem === "about"}
           onClick={() => handleItemClick("about")}
         />
-
         <Menu.Item
           name="Edit"
           active={activeItem === "Account"}

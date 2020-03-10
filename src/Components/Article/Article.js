@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Container, Header, Icon } from "semantic-ui-react";
 import NextArticleModal from "./NextArticleModal";
 import ArticleCountModal from "./ArticleCountModal";
-import { Container, Header, Icon } from "semantic-ui-react";
 
 function Article(props) {
   const [modalNext, setModalNext] = useState(false);
