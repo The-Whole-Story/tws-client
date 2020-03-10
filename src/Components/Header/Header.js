@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Logo from "../../TWS-main-logo.png";
 import { Image, Menu, Dropdown } from "semantic-ui-react";
@@ -7,6 +8,7 @@ import ArticleCountModal from "../Article/ArticleCountModal";
 function Header() {
   const [activeItem, setActiveItem] = useState("");
   const [modalCount, setModalCount] = useState(false);
+  const history = useHistory();
 
   const handleItemClick = active => {
     setActiveItem(active);
@@ -17,6 +19,11 @@ function Header() {
 
   const openModalCount = () => setModalCount(true);
   const closeModalCount = () => setModalCount(false);
+
+  useEffect(() => {
+    const active = history.location.pathname.slice(1);
+    setActiveItem(active);
+  }, [history]);
 
   return (
     <React.Fragment>
@@ -42,12 +49,7 @@ function Header() {
           active={activeItem === "Account"}
           onClick={() => handleItemClick("Account")}
         />
-        <Dropdown
-          text="Poltics 101"
-          pointing
-          className="link item"
-          active={activeItem === "basics"}
-        >
+        <Dropdown text="Poltics 101" pointing className="link item">
           <Dropdown.Menu>
             <Dropdown.Item
               as={Link}

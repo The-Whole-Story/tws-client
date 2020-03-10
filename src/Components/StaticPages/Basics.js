@@ -3,7 +3,7 @@ import { Container, Header } from "semantic-ui-react";
 
 function Basics() {
   return (
-    <Container text textAlign="centered">
+    <Container text textAlign="center">
       <Header as="h2">Basics</Header>
       <p>
         What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing

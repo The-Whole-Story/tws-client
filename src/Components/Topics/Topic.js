@@ -21,12 +21,11 @@ function Topic({ title }) {
 
   useEffect(() => {
     // App Api call based on in coming prop
-  });
+  }, []);
 
   return (
     <React.Fragment>
       <Container>
-        {" "}
         <Header
           as="h2"
           float="left"
