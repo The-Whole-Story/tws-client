@@ -11,10 +11,16 @@ function Header() {
   };
   return (
     <React.Fragment>
-      <Link to={`/`} className="text">
-        <Image src={Logo} centered />{" "}
+      <Link to={`/`} className="text" onClick={() => handleItemClick("")}>
+        <Image src={Logo} centered />
       </Link>
-      <Menu pointing secondary fluid widths={6}>
+      <Menu
+        style={{ borderBottom: "none" }}
+        pointing
+        secondary
+        fluid
+        widths={6}
+      >
         <Menu.Item
           as={Link}
           to="/about"

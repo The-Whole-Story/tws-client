@@ -1,11 +1,12 @@
 import React, { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
-import SubTopic from "./SubTopic";
 import { Header, Container, Card } from "semantic-ui-react";
+import SubTopic from "./SubTopic";
 
 function Topic({ title }) {
   const history = useHistory();
   let [clicked, setClick] = useState(false);
+
   const handleOnClick = () => {
     console.log("In topic click");
     setClick(true);
@@ -16,6 +17,7 @@ function Topic({ title }) {
       state: { detail: "detail" }
     });
   };
+
   return (
     <React.Fragment>
       <Container>

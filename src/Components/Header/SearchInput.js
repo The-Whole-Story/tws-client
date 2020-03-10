@@ -21,6 +21,7 @@ function SearchInput({ updateSearchTerm }) {
           <Header style={{ marginTop: "20px" }}>
             <Input
               // loading={searchLoading}
+              style={{ width: "400px" }}
               value={inputValue}
               onChange={handleSearchChange}
               size="mini"
