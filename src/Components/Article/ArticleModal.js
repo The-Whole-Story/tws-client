@@ -14,8 +14,8 @@ function ArticleModal({ modal, closeModal, vote }) {
         />
         <Modal.Description>
           <Header>
-            Are you suprised {vote} voted this article? Move to the next article
-            to get the whole story.
+            Are you suprised you {vote} voted this article? Move to the next
+            article to get the whole story.
           </Header>
           <Progress value="3" total="5" progress="ratio" active>
             You're almost there

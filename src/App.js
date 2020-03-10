@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import Header from "./Components/Header";
+import Header from "./Components/Header/Header";
 import LandingPage from "./Components/LandingPage";
-import SearchInput from "./Components/SearchInput";
-import SocialHeader from "./Components/SocialHeader";
+import SearchInput from "./Components/Header/SearchInput";
+import SocialHeader from "./Components/Header/SocialHeader";
 import SearchTopic from "./Components/SearchTopic";
 import AboutUs from "./Components/StaticPages/AboutUs";
 import Basics from "./Components/StaticPages/Basics";

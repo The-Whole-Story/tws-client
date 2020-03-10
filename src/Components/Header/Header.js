@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../LOGO-whole-story.png";
+import Logo from "../../LOGO-whole-story.png";
 import { Divider, Image } from "semantic-ui-react";
 
 function Header() {

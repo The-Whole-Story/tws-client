@@ -1,5 +1,5 @@
 import React from "react";
-import Topic from "../Topics/Topic";
+import Topic from "./Topics/Topic";
 import { Header, Container } from "semantic-ui-react";
 
 function LandingPage() {
