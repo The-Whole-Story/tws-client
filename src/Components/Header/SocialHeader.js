@@ -32,6 +32,15 @@ function Header() {
         >
           <i className="instagram  icon"></i>
         </a>
+        <a href="mailto:marcoberardini@gmail.com" className="fitted right item">
+          <p>
+            Contact Us
+            <i
+              style={{ paddingLeft: "5px" }}
+              className="mail outline  icon"
+            ></i>
+          </p>
+        </a>
       </div>
     </div>
   );
