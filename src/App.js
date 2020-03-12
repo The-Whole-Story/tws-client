@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import LandingPage from "./Components/LandingPage";
 import SearchInput from "./Components/Header/SearchInput";

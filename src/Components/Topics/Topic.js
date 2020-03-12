@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Header, Container, Card } from "semantic-ui-react";
+import { Header, Container, Card, Transition } from "semantic-ui-react";
 import SubTopic from "./SubTopic";
 
 function Topic({ title }) {
@@ -41,13 +41,16 @@ function Topic({ title }) {
           itemsPerRow={3}
           style={{ paddingBottom: "20px" }}
         >
-          <Card className="animated rollIn" onClick={handleOnClick}>
-            <Card.Content>
-              <Card.Header>Global Warming</Card.Header>
-              <Card.Meta>Something here</Card.Meta>
-              <Card.Description>More text here.</Card.Description>
-            </Card.Content>
-          </Card>
+          <Transition animation="shake" duration={8000} visible={true}>
+            <Card className="animated rollIn" onClick={handleOnClick}>
+              <Card.Content>
+                <Card.Header>Global Warming</Card.Header>
+                <Card.Meta>Something here</Card.Meta>
+                <Card.Description>More text here.</Card.Description>
+              </Card.Content>
+            </Card>
+          </Transition>
+
           <Card className="animated rollIn" onClick={handleOnClick}>
             <Card.Content>
               <Card.Header>Trump</Card.Header>

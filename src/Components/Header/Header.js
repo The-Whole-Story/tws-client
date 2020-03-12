@@ -57,7 +57,7 @@ function Header() {
               name="101"
               onClick={() => handleItemClick("basics")}
             >
-              item 1
+              Basic
             </Dropdown.Item>
             <Dropdown.Item>item 2</Dropdown.Item>
           </Dropdown.Menu>

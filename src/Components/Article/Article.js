@@ -66,7 +66,7 @@ function Article(props) {
         Malorum" by Cicero are also reproduced in their exact original form,
         accompanied by English versions from the 1914 translation by H. Rackham.
       </p>
-      <div style={{ paddingTop: "10px" }}>
+      <div style={{ padding: "10px", border: "1px solid black" }}>
         <Header as="h5">Up or Down vote to see who wrote the article</Header>
         <Icon
           onClick={() => handleClickArrow("Up")}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Image, Input, Header, Form } from "semantic-ui-react";
+import heroImage from "../../Images/echochamber-01.png";
 
 function ArticleCountModal({ modal, closeModal, header, description }) {
   const [count, setCount] = useState(3);
@@ -13,11 +14,7 @@ function ArticleCountModal({ modal, closeModal, header, description }) {
     <Modal open={modal} onClose={closeModal}>
       <Modal.Header> {header}</Modal.Header>
       <Modal.Content image>
-        <Image
-          wrapped
-          size="medium"
-          src="https://react.semantic-ui.com/images/avatar/large/rachel.png"
-        />
+        <Image wrapped size="medium" src={heroImage} />
         <Modal.Description>
           <Header>{description}</Header>
           <Form onSubmit={handleSubmit}>

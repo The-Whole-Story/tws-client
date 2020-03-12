@@ -1,4 +1,5 @@
 import React from "react";
+import heroImage from "../../Images/bubble-1.png";
 import { Modal, Image, Progress, Icon, Header } from "semantic-ui-react";
 
 function NextArticleModal({ modal, closeModal, vote }) {
@@ -6,11 +7,7 @@ function NextArticleModal({ modal, closeModal, vote }) {
     <Modal open={modal} onClose={closeModal}>
       <Modal.Header>The source of this article is BBC</Modal.Header>
       <Modal.Content image>
-        <Image
-          wrapped
-          size="medium"
-          src="https://react.semantic-ui.com/images/avatar/large/rachel.png"
-        />
+        <Image wrapped size="medium" src={heroImage} />
         <Modal.Description>
           <Header>
             Are you suprised you {vote} voted this article? Move to the next
