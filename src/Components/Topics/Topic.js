@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Header, Container, Card, Transition } from "semantic-ui-react";
+import { Header, Container, Card, Transition, Grid } from "semantic-ui-react";
 import SubTopic from "./SubTopic";
 
 function Topic({ title }) {
@@ -36,36 +36,53 @@ function Topic({ title }) {
         </Header>
       </Container>
       <Container>
-        <Card.Group
-          className="animated rollIn"
-          itemsPerRow={3}
-          style={{ paddingBottom: "20px" }}
-        >
-          <Transition animation="shake" duration={8000} visible={true}>
-            <Card className="animated rollIn" onClick={handleOnClick}>
-              <Card.Content>
-                <Card.Header>Global Warming</Card.Header>
-                <Card.Meta>Something here</Card.Meta>
-                <Card.Description>More text here.</Card.Description>
-              </Card.Content>
-            </Card>
-          </Transition>
-
-          <Card className="animated rollIn" onClick={handleOnClick}>
-            <Card.Content>
-              <Card.Header>Trump</Card.Header>
-              <Card.Meta>Something here</Card.Meta>
-              <Card.Description>More text here. </Card.Description>
-            </Card.Content>
-          </Card>
-          <Card className="animated rollIn" onClick={handleOnClick}>
-            <Card.Content>
-              <Card.Header>Corona Virus</Card.Header>
-              <Card.Meta>Something here</Card.Meta>
-              <Card.Description>More text here. </Card.Description>
-            </Card.Content>
-          </Card>
-        </Card.Group>
+        <Grid stackable centered padding columns={1}>
+          <Card.Group
+            className="animated rollIn"
+            itemsPerRow={3}
+            style={{ paddingBottom: "20px" }}
+          >
+            <Grid.Column>
+              <Card
+                className="animated rollIn"
+                style={{ margin: "10px" }}
+                onClick={handleOnClick}
+              >
+                <Card.Content>
+                  <Card.Header>Global Warming</Card.Header>
+                  <Card.Meta>Something here</Card.Meta>
+                  <Card.Description>More text here.</Card.Description>
+                </Card.Content>
+              </Card>
+            </Grid.Column>
+            <Grid.Column>
+              <Card
+                className="animated rollIn"
+                style={{ margin: "10px" }}
+                onClick={handleOnClick}
+              >
+                <Card.Content>
+                  <Card.Header>Trump</Card.Header>
+                  <Card.Meta>Something here</Card.Meta>
+                  <Card.Description>More text here. </Card.Description>
+                </Card.Content>
+              </Card>
+            </Grid.Column>
+            <Grid.Column>
+              <Card
+                className="animated rollIn"
+                style={{ margin: "10px" }}
+                onClick={handleOnClick}
+              >
+                <Card.Content>
+                  <Card.Header>Corona Virus</Card.Header>
+                  <Card.Meta>Something here</Card.Meta>
+                  <Card.Description>More text here. </Card.Description>
+                </Card.Content>
+              </Card>
+            </Grid.Column>
+          </Card.Group>
+        </Grid>
       </Container>
     </React.Fragment>
   );

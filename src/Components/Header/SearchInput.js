@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Header, Container, Input, Divider, Form } from "semantic-ui-react";
+import {
+  Header,
+  Container,
+  Input,
+  Grid,
+  Divider,
+  Form
+} from "semantic-ui-react";
 
 function SearchInput({ updateSearchTerm }) {
   const history = useHistory();
@@ -17,20 +24,24 @@ function SearchInput({ updateSearchTerm }) {
   return (
     <React.Fragment>
       <Container textAlign="center">
-        <Form onSubmit={handleOnSubmit}>
-          <Header style={{ marginTop: "20px" }}>
-            <Input
-              // loading={searchLoading}
-              style={{ width: "400px" }}
-              value={inputValue}
-              onChange={handleSearchChange}
-              size="mini"
-              icon="search"
-              name="searchTerm"
-              placeholder="Search Articles"
-            />
-          </Header>
-        </Form>
+        <Grid centered>
+          <Grid.Column mobile={16} tablet={8} computer={7}>
+            <Form onSubmit={handleOnSubmit}>
+              <Header style={{ marginTop: "20px" }}>
+                <Input
+                  // loading={searchLoading}
+                  style={{ width: "400px" }}
+                  value={inputValue}
+                  onChange={handleSearchChange}
+                  size="mini"
+                  icon="search"
+                  name="searchTerm"
+                  placeholder="Search Articles"
+                />
+              </Header>
+            </Form>
+          </Grid.Column>
+        </Grid>
       </Container>
       <Divider />
     </React.Fragment>
