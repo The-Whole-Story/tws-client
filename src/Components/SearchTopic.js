@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Header, Container, Card } from "semantic-ui-react";
-import { fetchTopic } from "../API/aylienAPI";
+import { fetchSubtopics } from "../API/twsApi";
 
 function SearchTopic({ searchTerm }) {
-  const [topics, setTopics] = useState([]);
-  useEffect(() => {
-    fetchTopic(searchTerm).then(enties => {
-      console.log("In then search : ", enties.data);
-      setTopics(enties.data);
-    });
-  }, [searchTerm]);
+    const [topics, setTopics] = useState([]);
+    useEffect(() => {
+        if (searchTerm !== '') {
+            fetchSubtopics(searchTerm).then((subtopics) => {
+                setTopics(subtopics);
+            });
+        }
+    }, [searchTerm]);
 
   return (
     <React.Fragment>
-      {console.log("In SearchTopic searchTerm", searchTerm)}
       <Container>
         <Header as="h2" float="left" style={{ paddingBottom: "20px" }}>
           Search Topic
