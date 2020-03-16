@@ -37,7 +37,7 @@ function Header() {
           textAlign: "center",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "teal"
+          backgroundColor: "white"
         }}
         // stackable
         compact

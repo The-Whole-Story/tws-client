@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Header, Container, Card } from "semantic-ui-react";
+import { Header, Container, Card, Message } from "semantic-ui-react";
 import Spinner from "./Spinner";
 import { fetchSubtopics } from "../API/twsApi";
 
@@ -17,16 +17,28 @@ function SearchTopic({ searchTerm }) {
     }
   }, [searchTerm]);
 
+  const handleOnClick = () => {};
+
   const renderCards = () => {
     if (spinner) {
       return <Spinner />;
     } else {
+      if (topics.length === 0) {
+        // Add styling to this
+        return (
+          <Message
+            warning
+            header="We did not find that topic"
+            content="Please search again"
+          />
+        );
+      }
       return (
         <Card.Group itemsPerRow={3} style={{ paddingBottom: "20px" }}>
           {topics &&
             topics.map((topic, index) => {
               return (
-                <Card key={index} onClick={() => {}}>
+                <Card key={index} onClick={handleOnClick}>
                   <Card.Content>
                     <Card.Header>{topic}</Card.Header>
                     <Card.Meta></Card.Meta>
