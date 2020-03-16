@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Header, Container, Card, Message } from "semantic-ui-react";
 import Spinner from "./Spinner";
+import SubTopic from "./Topics/SubTopic";
 import { fetchSubtopics } from "../API/twsApi";
 
 function SearchTopic({ searchTerm }) {
@@ -16,8 +17,6 @@ function SearchTopic({ searchTerm }) {
       });
     }
   }, [searchTerm]);
-
-  const handleOnClick = () => {};
 
   const renderCards = () => {
     if (spinner) {
@@ -38,13 +37,7 @@ function SearchTopic({ searchTerm }) {
           {topics &&
             topics.map((topic, index) => {
               return (
-                <Card key={index} onClick={handleOnClick}>
-                  <Card.Content>
-                    <Card.Header>{topic}</Card.Header>
-                    <Card.Meta></Card.Meta>
-                    <Card.Description>{searchTerm}</Card.Description>
-                  </Card.Content>
-                </Card>
+                <SubTopic topic={topic} index={index} searchTerm={searchTerm} />
               );
             })}
         </Card.Group>
