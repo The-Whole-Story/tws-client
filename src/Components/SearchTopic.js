@@ -12,7 +12,9 @@ function SearchTopic({ searchTerm }) {
     if (searchTerm !== "") {
       setSpinner(true);
       fetchSubtopics(searchTerm).then(subtopics => {
-        setTopics(subtopics);
+        if (subtopics) {
+          setTopics(subtopics);
+        }
         setSpinner(false);
       });
     }

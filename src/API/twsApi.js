@@ -30,7 +30,7 @@ export const fetchArticleIds = async (query, nArticles) => {
 export const fetchArticlesById = async id => {
   try {
     const result = await axios({
-      method: "post",
+      method: "get",
       url: `https://tws-node-server.herokuapp.com/articlesById?id1=${id}`,
       headers: { twsKey: process.env.REACT_APP_TWS_KEY }
     });
