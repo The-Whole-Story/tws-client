@@ -10,6 +10,11 @@ function Article(props) {
   const [body, setBody] = useState("");
   const [source, setSource] = useState("");
 
+  const [articleIndex, setArticleIndex] = useState(0);
+  const [articleCount, setArticleCount] = useState(0);
+  // const [articleChain, setArticleChain] = useState([]);
+  const [nextArticleId, setNextArticleId] = useState("");
+
   const [modalNext, setModalNext] = useState(false);
   const [modalCount, setModalCount] = useState(false);
 
@@ -22,6 +27,11 @@ function Article(props) {
   const closeModalCount = () => setModalCount(false);
 
   const handleClickArrow = direction => {
+    const articleChain = JSON.parse(localStorage.getItem("articleChain"));
+    setArticleIndex(
+      parseInt(JSON.parse(localStorage.getItem("currentArticle")))
+    );
+    setNextArticleId(articleChain[articleIndex + 1]);
     setVote(direction);
     openModalNext();
   };
@@ -30,6 +40,7 @@ function Article(props) {
     // if (!count) {
     //   openModalCount();
     // }
+    setArticleCount(parseInt(JSON.parse(localStorage.getItem("count"))));
     setSpinner(true);
     fetchArticlesById(props.match.params.articleId).then(article => {
       console.log("in articles : ", article);
@@ -69,6 +80,10 @@ function Article(props) {
       </div>
 
       <NextArticleModal
+        setArticleIndex={setArticleIndex}
+        articleIndex={articleIndex}
+        articleCount={articleCount}
+        nextArticleId={nextArticleId}
         source={source}
         vote={vote}
         modal={modalNext}
