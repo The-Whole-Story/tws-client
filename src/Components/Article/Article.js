@@ -40,7 +40,7 @@ function Article(props) {
     }
   };
   useEffect(() => {
-    // const count = JSON.parse(localStorage.getItem("count"));
+    const count = JSON.parse(localStorage.getItem("count"));
     // if (!count) {
     //   openModalCount();
     // }
@@ -54,6 +54,7 @@ function Article(props) {
       }
       setSpinner(false);
     });
+
     // if there is a count API call to recieve first article
   }, [props.match.params.articleId]);
 
@@ -94,6 +95,8 @@ function Article(props) {
         closeModal={closeModalNext}
       />
       <ArticleCountModal
+        setArticleCount={setArticleCount}
+        articleCount={articleCount}
         header="How many articles to get the whole story?"
         description="To continue please enter the number of articles you would like to be served"
         modal={modalCount}

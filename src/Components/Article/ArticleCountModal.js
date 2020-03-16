@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import { Modal, Image, Input, Header, Form } from "semantic-ui-react";
 import heroImage from "../../Images/echochamber-01.png";
 
-function ArticleCountModal({ modal, closeModal, header, description }) {
+function ArticleCountModal({
+  modal,
+  closeModal,
+  header,
+  description,
+  setArticleCount
+}) {
   const [count, setCount] = useState(3);
   const handleSubmit = event => {
     event.preventDefault();
     localStorage.setItem("count", JSON.stringify(count));
+    setArticleCount(count);
     closeModal();
   };
 

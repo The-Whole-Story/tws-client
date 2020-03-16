@@ -14,7 +14,7 @@ export const fetchSubtopics = async (topic, nSubtopics = 10) => {
   }
 };
 
-export const fetchArticleIds = async (query, nArticles) => {
+export const fetchArticleIds = async (query, nArticles = 3) => {
   try {
     const result = await axios({
       method: "get",

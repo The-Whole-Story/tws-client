@@ -16,6 +16,7 @@ function App() {
   const updateSearchTerm = query => {
     setSearchTerm(query);
   };
+  localStorage.setItem("count", 3);
 
   return (
     <div className="App">
