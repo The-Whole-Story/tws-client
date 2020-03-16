@@ -23,7 +23,6 @@ function SearchTopic({ searchTerm }) {
       return <Spinner />;
     } else {
       if (topics.length === 0) {
-        // Add styling to this
         return (
           <Message
             warning
