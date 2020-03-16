@@ -31,11 +31,18 @@ function Header() {
         <Image src={Logo} centered />
       </Link>
       <Menu
-        style={{ borderBottom: "none" }}
+        style={{
+          borderBottom: "none",
+          display: "flex",
+          textAlign: "center",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "teal"
+        }}
+        // stackable
+        compact
         pointing
         secondary
-        fluid
-        widths={12}
       >
         <Menu.Item
           as={Link}

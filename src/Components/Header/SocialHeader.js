@@ -4,7 +4,10 @@ function Header() {
   return (
     <React.Fragment>
       <div className="ui borderless menu centered">
-        <div className="ui container">
+        <div
+          className="ui container"
+          style={{ width: "100vw", padding: "0", margin: "0 auto" }}
+        >
           <a
             href="https://www.google.com/"
             className="fitted item"

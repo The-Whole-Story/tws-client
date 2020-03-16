@@ -18,21 +18,23 @@ function App() {
   };
 
   return (
-    <Router>
-      {console.log("In the App component", searchTerm)}
-      <SocialHeader />
-      <Header />
-      <SearchInput updateSearchTerm={updateSearchTerm} />
-      <Route exact path="/" component={LandingPage} />
-      <Route
-        exact
-        path="/searchTopic"
-        component={() => <SearchTopic searchTerm={searchTerm} />}
-      />
-      <Route path="/about" component={AboutUs} />
-      <Route path="/basics" component={Basics} />
-      <Route path="/article" component={Article} />
-    </Router>
+    <div className="App">
+      <Router>
+        {console.log("In the App component", searchTerm)}
+        <SocialHeader />
+        <Header />
+        <SearchInput updateSearchTerm={updateSearchTerm} />
+        <Route exact path="/" component={LandingPage} />
+        <Route
+          exact
+          path="/searchTopic"
+          component={() => <SearchTopic searchTerm={searchTerm} />}
+        />
+        <Route path="/about" component={AboutUs} />
+        <Route path="/basics" component={Basics} />
+        <Route path="/article" component={Article} />
+      </Router>
+    </div>
   );
 }
 

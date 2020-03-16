@@ -36,13 +36,18 @@ function Topic({ title }) {
         </Header>
       </Container>
       <Container>
-        <Grid stackable centered padding columns={1}>
+        <Grid stackable centered padding columns={3}>
           <Card.Group
             className="animated rollIn"
             itemsPerRow={3}
-            style={{ paddingBottom: "20px" }}
+            style={{
+              paddingBottom: "20px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
           >
-            <Grid.Column>
+            <Grid.Column textAlign="center" mobile={16} tablet={8} computer={7}>
               <Card
                 className="animated rollIn"
                 style={{ margin: "10px" }}
@@ -55,7 +60,7 @@ function Topic({ title }) {
                 </Card.Content>
               </Card>
             </Grid.Column>
-            <Grid.Column>
+            <Grid.Column textAlign="center" mobile={16} tablet={8} computer={7}>
               <Card
                 className="animated rollIn"
                 style={{ margin: "10px" }}
@@ -68,7 +73,7 @@ function Topic({ title }) {
                 </Card.Content>
               </Card>
             </Grid.Column>
-            <Grid.Column>
+            <Grid.Column textAlign="center" mobile={16} tablet={8} computer={7}>
               <Card
                 className="animated rollIn"
                 style={{ margin: "10px" }}
