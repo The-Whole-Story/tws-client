@@ -2,9 +2,17 @@
   padding-bottom: 20px;
 }
 
-.App {
+html,
+body {
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   margin: 0 auto;
   padding: 0;
+  /* background-color: blueviolet; */
+}
+
+.App {
+  /* background-color: lightskyblue; */
+  width: fit-content;
+  height: fit-content;
 }

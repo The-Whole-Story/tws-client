@@ -30,7 +30,15 @@ function SearchInput({ updateSearchTerm }) {
               <Header style={{ marginTop: "20px" }}>
                 <Input
                   // loading={searchLoading}
-                  style={{ width: "400px" }}
+                  style={{
+                    width: "400px",
+                    margin: "0 auto",
+                    padding: "0",
+                    display: "flex",
+                    textAlign: "center",
+                    alignItems: "center",
+                    justifyContent: "center"
+                  }}
                   value={inputValue}
                   onChange={handleSearchChange}
                   size="mini"
