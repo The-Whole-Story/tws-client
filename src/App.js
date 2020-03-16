@@ -32,7 +32,7 @@ function App() {
         />
         <Route path="/about" component={AboutUs} />
         <Route path="/basics" component={Basics} />
-        <Route path="/article" component={Article} />
+        <Route path="/article/:articleId" component={Article} />
       </Router>
     </div>
   );
