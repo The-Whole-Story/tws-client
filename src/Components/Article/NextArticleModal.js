@@ -15,11 +15,9 @@ function NextArticleModal({
 }) {
   const history = useHistory();
 
-  useEffect(() => {}, []);
-
   const handleClick = () => {
     setArticleIndex(articleIndex + 1);
-    localStorage.setItem("currentArticle", articleIndex + 1);
+    localStorage.setItem("currentArticleIndex", articleIndex + 1);
     history.push(`/article/${nextArticleId}`);
     closeModal();
   };

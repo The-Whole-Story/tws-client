@@ -27,13 +27,17 @@ function Article(props) {
   const closeModalCount = () => setModalCount(false);
 
   const handleClickArrow = direction => {
-    const articleChain = JSON.parse(localStorage.getItem("articleChain"));
-    setArticleIndex(
-      parseInt(JSON.parse(localStorage.getItem("currentArticle")))
-    );
-    setNextArticleId(articleChain[articleIndex + 1]);
-    setVote(direction);
-    openModalNext();
+    if (articleIndex < articleCount) {
+      const articleChain = JSON.parse(localStorage.getItem("articleChain"));
+      setArticleIndex(
+        parseInt(JSON.parse(localStorage.getItem("currentArticleIndex")))
+      );
+      setNextArticleId(articleChain[articleIndex + 1]);
+      setVote(direction);
+      openModalNext();
+    } else {
+      alert("you got to the end");
+    }
   };
   useEffect(() => {
     // const count = JSON.parse(localStorage.getItem("count"));
