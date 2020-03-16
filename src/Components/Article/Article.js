@@ -27,7 +27,7 @@ function Article(props) {
   const closeModalCount = () => setModalCount(false);
 
   const handleClickArrow = direction => {
-    if (articleIndex < articleCount) {
+    if (articleIndex < articleCount - 1) {
       const articleChain = JSON.parse(localStorage.getItem("articleChain"));
       setArticleIndex(
         parseInt(JSON.parse(localStorage.getItem("currentArticleIndex")))
