@@ -17,42 +17,56 @@ function Header() {
       <div className="ui borderless menu centered">
         <div
           className="ui container"
-          style={{ width: "100vw", padding: "0", margin: "0 auto" }}
+          style={{
+            width: "100vw",
+            padding: "0 15px"
+          }}
         >
           <a
             href="https://www.google.com/"
             className="fitted item"
             target="_blank"
           >
-            <i className="facebook f icon"></i>
+            <i
+              className="facebook f icon"
+              style={{
+                margin: "0 6px"
+              }}
+            ></i>
           </a>
           <a
-            href="https://www.google.com/"
+            href="https://twitter.com/get_tws"
             target="_blank"
             className="fitted item"
           >
-            <i className="twitter icon"></i>
+            <i
+              className="twitter icon"
+              style={{
+                margin: "0 6px"
+              }}
+            ></i>
           </a>
           <a
-            href="https://www.google.com/"
+            href="https://www.instagram.com/get.tws/"
             target="_blank"
             className="fitted item"
           >
-            <i className="pinterest f icon"></i>
-          </a>
-          <a
-            href="https://www.google.com/"
-            target="_blank"
-            className="fitted item"
-          >
-            <i className="instagram  icon"></i>
+            <i
+              className="instagram  icon"
+              style={{
+                margin: "0 6px"
+              }}
+            ></i>
           </a>
           <div className="fitted right item">
-            <a className="item" href="mailto:marcoberardini@gmail.com">
+            <a className="item" href="mailto:askthewholestory@gmail.com">
               <p>
                 <i
-                  style={{ paddingLeft: "5px", marginRight: "10px" }}
-                  className="mail outline  icon"
+                  style={{
+                    paddingTop: "5px",
+                    marginRight: "-2px"
+                  }}
+                  className="mail outline icon"
                 ></i>
               </p>
             </a>

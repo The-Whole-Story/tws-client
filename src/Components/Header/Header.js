@@ -28,11 +28,10 @@ function Header() {
   return (
     <React.Fragment>
       <Link to={`/`} className="text" onClick={() => handleItemClick("")}>
-        <Image src={Logo} centered />
+        <Image style={{ padding: "0 15px" }} src={Logo} centered />
       </Link>
       <Menu
         style={{
-          borderBottom: "none",
           display: "flex",
           textAlign: "center",
           justifyContent: "center",
