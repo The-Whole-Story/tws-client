@@ -12,9 +12,9 @@ function Header() {
 
   const handleItemClick = active => {
     setActiveItem(active);
-    if (active === "Account") {
-      openModalCount();
-    }
+    // if (active === "Account") {
+    //   openModalCount();
+    // }
   };
 
   const openModalCount = () => setModalCount(true);
@@ -52,7 +52,7 @@ function Header() {
           onClick={() => handleItemClick("about")}
         />
         <Menu.Item
-          name="Edit"
+          name="item"
           active={activeItem === "Account"}
           onClick={() => handleItemClick("Account")}
         />

@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import ArticleCountModal from "../Article/ArticleCountModal";
+import { Link } from "react-router-dom";
 
 function Header() {
+  const [modalCount, setModalCount] = useState(false);
+
+  const openModalCount = () => setModalCount(true);
+  const closeModalCount = () => setModalCount(false);
+
+  const handleItemClick = () => {
+    openModalCount();
+  };
+
   return (
     <React.Fragment>
       <div className="ui borderless menu centered">
@@ -36,20 +47,27 @@ function Header() {
           >
             <i className="instagram  icon"></i>
           </a>
-          <a
-            href="mailto:marcoberardini@gmail.com"
-            className="fitted right item"
-          >
-            <p>
-              Contact Us
-              <i
-                style={{ paddingLeft: "5px" }}
-                className="mail outline  icon"
-              ></i>
-            </p>
-          </a>
+          <div className="fitted right item">
+            <a className="item" href="mailto:marcoberardini@gmail.com">
+              <p>
+                <i
+                  style={{ paddingLeft: "5px", marginRight: "10px" }}
+                  className="mail outline  icon"
+                ></i>
+              </p>
+            </a>
+            <a className="item" onClick={() => handleItemClick()}>
+              <i className="cog icon"></i>
+            </a>
+          </div>
         </div>
       </div>
+      <ArticleCountModal
+        header="Edit the number of articles"
+        description="To continue please enter the number of articles you would like to be served"
+        modal={modalCount}
+        closeModal={closeModalCount}
+      />
     </React.Fragment>
   );
 }
