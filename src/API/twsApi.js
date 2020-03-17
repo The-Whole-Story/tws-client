@@ -1,7 +1,6 @@
 const axios = require("axios");
 
 export const fetchSubtopics = async (topic, nSubtopics = 10) => {
-  console.log("API key ", process.env.REACT_APP_TWS_KEY);
   try {
     const result = await axios({
       method: "get",
