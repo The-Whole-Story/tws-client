@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Header, Container, Card, Message } from "semantic-ui-react";
+import { Header, Container, Card, Message, Grid } from "semantic-ui-react";
 import Spinner from "./Spinner";
 import SubTopic from "./Topics/SubTopic";
 import { fetchSubtopics } from "../API/twsApi";
@@ -34,14 +34,36 @@ function SearchTopic({ searchTerm }) {
         );
       }
       return (
-        <Card.Group itemsPerRow={3} style={{ paddingBottom: "20px" }}>
-          {topics &&
-            topics.map((topic, index) => {
-              return (
-                <SubTopic topic={topic} index={index} searchTerm={searchTerm} />
-              );
-            })}
-        </Card.Group>
+        <Grid stackable centered padding columns={3}>
+          <Card.Group
+            className="animated rollIn"
+            itemsPerRow={3}
+            style={{
+              paddingBottom: "20px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            {topics &&
+              topics.map((topic, index) => {
+                return (
+                  <Grid.Column
+                    textAlign="center"
+                    mobile={16}
+                    tablet={8}
+                    computer={7}
+                  >
+                    <SubTopic
+                      topic={topic}
+                      index={index}
+                      searchTerm={searchTerm}
+                    />
+                  </Grid.Column>
+                );
+              })}
+          </Card.Group>
+        </Grid>
       );
     }
   };

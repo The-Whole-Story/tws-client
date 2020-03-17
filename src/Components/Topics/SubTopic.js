@@ -19,10 +19,15 @@ function Topic({ title, index, searchTerm, topic }) {
 
   return (
     <React.Fragment>
-      <Card key={index} onClick={handleOnClick}>
+      <Card
+        key={index}
+        style={{ margin: "10px" }}
+        onClick={handleOnClick}
+        className="animated rollIn"
+      >
         <Card.Content>
           <Card.Header>{topic}</Card.Header>
-          <Card.Meta></Card.Meta>
+          <Card.Meta>...</Card.Meta>
           <Card.Description>{searchTerm}</Card.Description>
         </Card.Content>
       </Card>

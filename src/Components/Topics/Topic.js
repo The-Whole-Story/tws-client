@@ -48,43 +48,13 @@ function Topic({ title }) {
             }}
           >
             <Grid.Column textAlign="center" mobile={16} tablet={8} computer={7}>
-              <Card
-                className="animated rollIn"
-                style={{ margin: "10px" }}
-                onClick={handleOnClick}
-              >
-                <Card.Content>
-                  <Card.Header>Global Warming</Card.Header>
-                  <Card.Meta>Something here</Card.Meta>
-                  <Card.Description>More text here.</Card.Description>
-                </Card.Content>
-              </Card>
+              <SubTopic searchTerm="Trump" topic="Coronavirus" />
             </Grid.Column>
             <Grid.Column textAlign="center" mobile={16} tablet={8} computer={7}>
-              <Card
-                className="animated rollIn"
-                style={{ margin: "10px" }}
-                onClick={handleOnClick}
-              >
-                <Card.Content>
-                  <Card.Header>Trump</Card.Header>
-                  <Card.Meta>Something here</Card.Meta>
-                  <Card.Description>More text here. </Card.Description>
-                </Card.Content>
-              </Card>
+              <SubTopic searchTerm="Trump" topic="Coronavirus" />
             </Grid.Column>
             <Grid.Column textAlign="center" mobile={16} tablet={8} computer={7}>
-              <Card
-                className="animated rollIn"
-                style={{ margin: "10px" }}
-                onClick={handleOnClick}
-              >
-                <Card.Content>
-                  <Card.Header>Corona Virus</Card.Header>
-                  <Card.Meta>Something here</Card.Meta>
-                  <Card.Description>More text here. </Card.Description>
-                </Card.Content>
-              </Card>
+              <SubTopic searchTerm="Trump" topic="Coronavirus" />
             </Grid.Column>
           </Card.Group>
         </Grid>
