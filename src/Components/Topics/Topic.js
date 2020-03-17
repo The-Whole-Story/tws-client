@@ -51,10 +51,10 @@ function Topic({ title }) {
               <SubTopic searchTerm="Trump" topic="Coronavirus" />
             </Grid.Column>
             <Grid.Column textAlign="center" mobile={16} tablet={8} computer={7}>
-              <SubTopic searchTerm="Trump" topic="Coronavirus" />
+              <SubTopic searchTerm="Ohio" topic="Primaries" />
             </Grid.Column>
             <Grid.Column textAlign="center" mobile={16} tablet={8} computer={7}>
-              <SubTopic searchTerm="Trump" topic="Coronavirus" />
+              <SubTopic searchTerm="Bernie Sanders" topic="Joe Biden" />
             </Grid.Column>
           </Card.Group>
         </Grid>
