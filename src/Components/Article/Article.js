@@ -69,17 +69,35 @@ function Article(props) {
     <Container text textAlign="center">
       {console.log(props.location)}
       <Header as="h2">Article</Header>
-      <p>{renderAricle()}</p>
-      <div style={{ padding: "10px", border: "1px solid black" }}>
-        <Header as="h5">Up or Down vote to see who wrote the article</Header>
+      <p style={{ textAlign: "left" }}>{renderAricle()}</p>
+      <div
+        style={{
+          padding: "15px",
+          border: "1px solid black",
+          // boxShadow: "9px 12px #888888",
+          // borderBottom: "1px solid black",
+          margin: "20px"
+        }}
+      >
+        <Header style={{ fontSize: "16px" }} as="h5">
+          Up or Down vote to see who wrote the article
+        </Header>
         <Icon
+          style={{ "font-size": 42 }}
           onClick={() => handleClickArrow("Up")}
-          size="big"
+          // size="big"
+          // name="arrow alternate circle up outline"
+          // name="arrow circle down"
+          // name="caret square up"
           name="long arrow alternate up"
         />
         <Icon
+          style={{ "font-size": 42, marginLeft: "30px" }}
           onClick={() => handleClickArrow("Down")}
-          size="big"
+          // size="big"
+          // name="arrow alternate circle down outline"
+          // name="arrow circle down"
+          // name="caret square down"
           name="long arrow alternate down"
         />
       </div>
