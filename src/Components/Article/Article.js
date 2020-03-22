@@ -68,7 +68,7 @@ function Article(props) {
   return (
     <Container text textAlign="center">
       {console.log(props.location)}
-      <Header as="h2">Article</Header>
+      <Header as="h1">- {articleIndex + 1} -</Header>
       <p style={{ textAlign: "left" }}>{renderAricle()}</p>
       <div
         style={{
@@ -89,7 +89,7 @@ function Article(props) {
           // name="arrow alternate circle up outline"
           // name="arrow circle down"
           // name="caret square up"
-          name="long arrow alternate up"
+          name="thumbs down outline"
         />
         <Icon
           style={{ "font-size": 42, marginLeft: "30px" }}
@@ -98,7 +98,7 @@ function Article(props) {
           // name="arrow alternate circle down outline"
           // name="arrow circle down"
           // name="caret square down"
-          name="long arrow alternate down"
+          name="thumbs up outline"
         />
       </div>
 
