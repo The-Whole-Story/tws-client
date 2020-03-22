@@ -8,6 +8,7 @@ import { fetchArticlesById } from "../../API/twsApi";
 function Article(props) {
   const [spinner, setSpinner] = useState(false);
   const [body, setBody] = useState("");
+  const [publishedAt, setpublishedAt] = useState("");
   const [source, setSource] = useState("");
 
   const [articleIndex, setArticleIndex] = useState(0);
@@ -50,6 +51,8 @@ function Article(props) {
       console.log("in articles : ", article);
       if (article) {
         setBody(article[0].body);
+        const publishedDateTime = article[0].publishedAt.split("T");
+        setpublishedAt(publishedDateTime[0]);
         setSource(article[0].source.name);
       }
       setSpinner(false);
@@ -60,7 +63,7 @@ function Article(props) {
 
   const renderAricle = () => {
     if (spinner) {
-      return <Spinner />;
+      return <Spinner message="Fetching your article..." />;
     }
     return body;
   };
@@ -68,7 +71,9 @@ function Article(props) {
   return (
     <Container text textAlign="center">
       {console.log(props.location)}
-      <Header as="h1">- {articleIndex + 1} -</Header>
+      <Header size="huge" as="h1" style={{ fontFamily: "Playfair Display" }}>
+        - {articleIndex + 1} -<Header.Subheader>{publishedAt}</Header.Subheader>
+      </Header>
       <p style={{ textAlign: "left" }}>{renderAricle()}</p>
       <div
         style={{

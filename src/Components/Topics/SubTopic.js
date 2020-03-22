@@ -11,7 +11,7 @@ function Topic({ title, index, searchTerm, topic }) {
 
   const handleOnClick = () => {
     // make Api call to article ids
-    //setSpinner(true);
+    setSpinner(true);
     const articleCount = JSON.parse(localStorage.getItem("count"));
     fetchArticleIds(`${searchTerm} ${topic}`, articleCount).then(articleIds => {
       localStorage.setItem("articleChain", JSON.stringify(articleIds));
@@ -21,7 +21,7 @@ function Topic({ title, index, searchTerm, topic }) {
   };
   const renderCard = () => {
     if (spinner) {
-      return <Spinner />;
+      return <Spinner message="Getting your chain of articles" />;
     } else {
       return (
         <Card
