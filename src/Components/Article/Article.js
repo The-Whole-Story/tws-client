@@ -7,7 +7,7 @@ import { fetchArticlesById } from "../../API/twsApi";
 
 function Article(props) {
   const [spinner, setSpinner] = useState(false);
-  const [body, setBody] = useState("");
+  const [body, setBody] = useState([]);
   const [publishedAt, setpublishedAt] = useState("");
   const [source, setSource] = useState("");
 
@@ -50,7 +50,8 @@ function Article(props) {
     fetchArticlesById(props.match.params.articleId).then(article => {
       console.log("in articles : ", article);
       if (article) {
-        setBody(article[0].body);
+        const newBody = article[0].body;
+        setBody([...newBody]);
         const publishedDateTime = article[0].publishedAt.split("T");
         setpublishedAt(publishedDateTime[0]);
         setSource(article[0].source.name);
@@ -65,7 +66,8 @@ function Article(props) {
     if (spinner) {
       return <Spinner message="Fetching your article..." />;
     }
-    return body;
+    const newBody = body.map(paragraph => <p> {paragraph}</p>);
+    return newBody;
   };
 
   return (
