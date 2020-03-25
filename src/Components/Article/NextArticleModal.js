@@ -38,7 +38,7 @@ function NextArticleModal({
             progress="ratio"
             active
           >
-            You're almost there
+            You're almost there!
           </Progress>
           <div style={{ textAlign: "right", paddingTop: "10px" }}>
             <Icon

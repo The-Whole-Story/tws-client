@@ -55,7 +55,7 @@ function Header() {
           active={activeItem === "Account"}
           onClick={() => handleItemClick("Account")}
         />
-        <Dropdown text="Poltics 101" pointing className="link item">
+        <Dropdown text="Politics 101" pointing className="link item">
           <Dropdown.Menu>
             <Dropdown.Item
               as={Link}

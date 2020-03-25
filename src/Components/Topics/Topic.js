@@ -30,7 +30,7 @@ function Topic({ title }) {
           as="h2"
           float="left"
           className="title animated fadeInRightBig"
-          style={{ paddingBottom: "20px" }}
+          style={{ paddingBottom: "25px" }}
         >
           {title}
         </Header>
@@ -44,7 +44,8 @@ function Topic({ title }) {
               paddingBottom: "20px",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center"
+              alignItems: "center",
+              marginBottom: "20px"
             }}
           >
             <Grid.Column textAlign="center" mobile={16} tablet={8} computer={7}>
