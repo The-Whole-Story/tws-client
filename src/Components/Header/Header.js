@@ -29,6 +29,18 @@ function Header() {
     <React.Fragment>
       <Link to={`/`} className="text" onClick={() => handleItemClick("")}>
         <Image style={{ padding: "0 15px" }} src={Logo} centered />
+        <p
+          style={{
+            textAlign: "center",
+            marginTop: "-4px",
+            fontFamily: "Montserrat",
+            color: "black",
+            fontSize: "20px"
+          }}
+        >
+          {" "}
+          NEWS WITHOUT BIAS
+        </p>
       </Link>
       <Menu
         style={{
