@@ -24,14 +24,12 @@ function NextArticleModal({
 
   return (
     <Modal open={modal} onClose={closeModal}>
-      <Modal.Header>The source of this article is {source}</Modal.Header>
+      <Modal.Header>The source of this article is...{source}</Modal.Header>
       <Modal.Content image>
         <Image wrapped size="medium" src={heroImage} />
         <Modal.Description>
-          <Header>
-            Are you suprised you {vote} voted this article? Move to the next
-            article to get the whole story.
-          </Header>
+          <Header>Are you suprised you {vote} voted this article?</Header>
+          <Header>Move to the next article to get the whole story.</Header>
           <Progress
             value={articleIndex + 1}
             total={articleCount}
