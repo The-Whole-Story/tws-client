@@ -11,7 +11,7 @@ function NextArticleModal({
   nextArticleId,
   articleCount,
   articleIndex,
-  setArticleIndex
+  setArticleIndex,
 }) {
   const history = useHistory();
 
@@ -24,7 +24,10 @@ function NextArticleModal({
 
   return (
     <Modal open={modal} onClose={closeModal}>
-      <Modal.Header>The source of this article is...{source}</Modal.Header>
+      <Modal.Header>
+        The source of this article is...
+        <Image size="medium" src={`/Images/logos/${source}.jpg`} />
+      </Modal.Header>
       <Modal.Content image>
         <Image wrapped size="medium" src={heroImage} />
         <Modal.Description>

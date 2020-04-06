@@ -32,8 +32,12 @@ function Topic({ title, index, searchTerm, topic }) {
         >
           <Card.Content>
             <Card.Header>{topic}</Card.Header>
-            <Card.Meta>...</Card.Meta>
-            <Card.Description>{searchTerm}</Card.Description>
+            <Card.Meta>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley
+            </Card.Meta>
+            <Card.Description>Keyword: {searchTerm}</Card.Description>
           </Card.Content>
         </Card>
       );
