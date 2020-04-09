@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Header, Container, Card, Message, Grid } from "semantic-ui-react";
+import {
+  Header,
+  Container,
+  Card,
+  Message,
+  Grid,
+  Icon,
+} from "semantic-ui-react";
 import SubTopic from "../Topics/SubTopic";
 import { fetchSubtopics } from "../../API/twsApi";
 
@@ -18,11 +25,13 @@ function PoliticsTopic({ title }) {
   const renderCards = () => {
     if (topics.length === 0) {
       return (
-        <Message
-          warning
-          header="Sorry. We could not find that topic."
-          content="Please search again"
-        />
+        <Message icon>
+          <Icon name="circle notched" loading />
+          <Message.Content>
+            <Message.Header>Just one second</Message.Header>
+            We are fetching that content for you.
+          </Message.Content>
+        </Message>
       );
     }
     return (
