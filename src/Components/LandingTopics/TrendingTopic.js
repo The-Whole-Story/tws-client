@@ -3,11 +3,11 @@ import { Header, Container, Card, Message, Grid } from "semantic-ui-react";
 import SubTopic from "../Topics/SubTopic";
 import { fetchSubtopics } from "../../API/twsApi";
 
-function PositiveTopic({ title }) {
+function TrendingTopic({ title }) {
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
-    fetchSubtopics("fireman", "positive", 3).then((subtopics) => {
+    fetchSubtopics("trending", "trending", 3).then((subtopics) => {
       console.log(subtopics);
       if (subtopics) {
         setTopics(subtopics.slice(0, 3));
@@ -77,4 +77,4 @@ function PositiveTopic({ title }) {
   );
 }
 
-export default PositiveTopic;
+export default TrendingTopic;

@@ -7,7 +7,7 @@ function PoliticsTopic({ title }) {
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
-    fetchSubtopics("politics", "politics", 3).then((subtopics) => {
+    fetchSubtopics("trump", "politics", 3).then((subtopics) => {
       console.log(subtopics);
       if (subtopics) {
         setTopics(subtopics.slice(0, 3));
