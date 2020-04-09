@@ -11,7 +11,7 @@ function SearchTopic({ searchTerm }) {
   useEffect(() => {
     if (searchTerm !== "") {
       setSpinner(true);
-      fetchSubtopics(searchTerm).then(subtopics => {
+      fetchSubtopics(searchTerm).then((subtopics) => {
         if (subtopics) {
           setTopics(subtopics);
         }
@@ -28,7 +28,7 @@ function SearchTopic({ searchTerm }) {
         return (
           <Message
             warning
-            header="We did not find that topic"
+            header="Sorry. We could not find that topic."
             content="Please search again"
           />
         );
@@ -42,7 +42,7 @@ function SearchTopic({ searchTerm }) {
               paddingBottom: "20px",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             {topics &&
@@ -53,6 +53,7 @@ function SearchTopic({ searchTerm }) {
                     mobile={16}
                     tablet={8}
                     computer={7}
+                    style={{ margin: "10px" }}
                   >
                     <SubTopic
                       topic={topic}

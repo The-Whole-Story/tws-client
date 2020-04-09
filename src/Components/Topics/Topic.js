@@ -15,7 +15,7 @@ function Topic({ title }) {
     history.push({
       pathname: "/article",
       search: "?query=abc",
-      state: { detail: "detail" }
+      state: { detail: "detail" },
     });
   };
 
@@ -45,7 +45,7 @@ function Topic({ title }) {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              marginBottom: "20px"
+              marginBottom: "20px",
             }}
           >
             <Grid.Column textAlign="center" mobile={16} tablet={8} computer={7}>

@@ -8,12 +8,13 @@ import SearchTopic from "./Components/SearchTopic";
 import AboutUs from "./Components/StaticPages/AboutUs";
 import Basics from "./Components/StaticPages/Basics";
 import Article from "./Components/Article/Article";
+import footer from "./TWSFooter.png";
 
 import "./App.css";
 
 function App() {
   const [searchTerm, setSearchTerm] = React.useState("");
-  const updateSearchTerm = query => {
+  const updateSearchTerm = (query) => {
     setSearchTerm(query);
   };
   localStorage.setItem("count", 3);
@@ -35,6 +36,7 @@ function App() {
         <Route path="/basics" component={Basics} />
         <Route path="/article/:articleId" component={Article} />
       </Router>
+      <img className="footer" src={footer}></img>
     </div>
   );
 }

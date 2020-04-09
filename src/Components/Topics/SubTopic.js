@@ -13,11 +13,13 @@ function Topic({ title, index, searchTerm, topic }) {
     // make Api call to article ids
     setSpinner(true);
     const articleCount = JSON.parse(localStorage.getItem("count"));
-    fetchArticleIds(`${searchTerm} ${topic}`, articleCount).then(articleIds => {
-      localStorage.setItem("articleChain", JSON.stringify(articleIds));
-      localStorage.setItem("currentArticleIndex", JSON.stringify(0));
-      history.push(`/article/${articleIds[0]}`);
-    });
+    fetchArticleIds(`${searchTerm} ${topic}`, articleCount).then(
+      (articleIds) => {
+        localStorage.setItem("articleChain", JSON.stringify(articleIds));
+        localStorage.setItem("currentArticleIndex", JSON.stringify(0));
+        history.push(`/article/${articleIds[0]}`);
+      }
+    );
   };
   const renderCard = () => {
     if (spinner) {
@@ -26,7 +28,11 @@ function Topic({ title, index, searchTerm, topic }) {
       return (
         <Card
           key={index}
-          style={{ margin: "10px" }}
+          style={{
+            margin: "10px",
+            boxShadow: "2px 3px 10px rgba(0, 0, 0, 0.2)",
+            borderRadius: "6px",
+          }}
           onClick={handleOnClick}
           className="animated rollIn"
         >

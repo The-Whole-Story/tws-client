@@ -10,7 +10,7 @@ function Header() {
   const [modalCount, setModalCount] = useState(false);
   const history = useHistory();
 
-  const handleItemClick = active => {
+  const handleItemClick = (active) => {
     setActiveItem(active);
     // if (active === "Account") {
     //   openModalCount();
@@ -35,7 +35,7 @@ function Header() {
             marginTop: "-4px",
             fontFamily: "Montserrat",
             color: "black",
-            fontSize: "20px"
+            fontSize: "20px",
           }}
         >
           {" "}
@@ -48,7 +48,8 @@ function Header() {
           textAlign: "center",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "white"
+          backgroundColor: "white",
+          borderTop: "2px solid rgba(34,36,38,.15)",
         }}
         // stackable
         compact
@@ -61,13 +62,20 @@ function Header() {
           name="About"
           active={activeItem === "about"}
           onClick={() => handleItemClick("about")}
+          style={{ color: "#a084ff" }}
         />
         <Menu.Item
           name="item"
           active={activeItem === "Account"}
           onClick={() => handleItemClick("Account")}
+          style={{ color: "#a084ff" }}
         />
-        <Dropdown text="Politics 101" pointing className="link item">
+        <Dropdown
+          text="Politics 101"
+          pointing
+          className="link item"
+          style={{ color: "#a084ff" }}
+        >
           <Dropdown.Menu>
             <Dropdown.Item
               as={Link}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import heroImage from "../../Images/bubble-1.png";
 import { Modal, Image, Progress, Icon, Header } from "semantic-ui-react";
+import arrow from "../../Images/arrow.png";
 
 function NextArticleModal({
   modal,
@@ -25,8 +26,12 @@ function NextArticleModal({
   return (
     <Modal open={modal} onClose={closeModal}>
       <Modal.Header>
-        The source of this article is...
-        <Image size="medium" src={`/Images/logos/${source}.jpg`} />
+        <p style={{ FontFamily: "Montserrat" }}>
+          The source of this article is...
+        </p>
+        <center>
+          <Image size="large" src={`/Images/logos/${source}.jpg`} />
+        </center>
       </Modal.Header>
       <Modal.Content image>
         <Image wrapped size="medium" src={heroImage} />
@@ -38,16 +43,22 @@ function NextArticleModal({
             total={articleCount}
             progress="ratio"
             active
+            style={{ fontFamily: "Yantramanav" }}
           >
             You're almost there!
           </Progress>
           <div style={{ textAlign: "right", paddingTop: "10px" }}>
-            <Icon
-              size="huge"
-              name="arrow alternate circle right"
-              color="grey"
+            <img
+              style={{ width: "60px", cursor: "pointer" }}
+              src={arrow}
               onClick={handleClick}
-            ></Icon>
+            ></img>
+            {/* <Icon
+              size="huge"
+              name="chevron circle right"
+              color="grey"
+            
+            ></Icon> */}
           </div>
         </Modal.Description>
       </Modal.Content>
