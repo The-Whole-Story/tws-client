@@ -12,6 +12,7 @@ function SearchTopic({ searchTerm }) {
     if (searchTerm !== "") {
       setSpinner(true);
       fetchSubtopics(searchTerm).then((subtopics) => {
+        console.log(subtopics);
         if (subtopics) {
           setTopics(subtopics);
         }
@@ -56,7 +57,8 @@ function SearchTopic({ searchTerm }) {
                     style={{ margin: "10px" }}
                   >
                     <SubTopic
-                      topic={topic}
+                      topic={topic.name}
+                      categories={topic.categories.slice(0, 10)}
                       index={index}
                       searchTerm={searchTerm}
                     />

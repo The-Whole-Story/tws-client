@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import { Card } from "semantic-ui-react";
 import Spinner from "../Spinner";
-import { fetchArticleIds } from "../../API/twsApi";
+import { fetchArticleIds, fetchSubtopics } from "../../API/twsApi";
 
-function Topic({ title, index, searchTerm, topic }) {
+function SubTopic({ title, index, searchTerm, topic, categories }) {
   const history = useHistory();
   const [spinner, setSpinner] = useState(false);
+
+  useEffect(() => {
+    fetchSubtopics(searchTerm, topic).then((res) => {
+      //console.log("This is response", res)
+    });
+  }, []);
 
   const handleOnClick = () => {
     // make Api call to article ids
@@ -20,6 +26,9 @@ function Topic({ title, index, searchTerm, topic }) {
         history.push(`/article/${articleIds[0]}`);
       }
     );
+  };
+  const displayCategories = () => {
+    return categories && categories.map((category) => category);
   };
   const renderCard = () => {
     if (spinner) {
@@ -38,11 +47,7 @@ function Topic({ title, index, searchTerm, topic }) {
         >
           <Card.Content>
             <Card.Header>{topic}</Card.Header>
-            <Card.Meta>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley
-            </Card.Meta>
+            <Card.Meta>Category: {displayCategories()}</Card.Meta>
             <Card.Description>Keyword: {searchTerm}</Card.Description>
           </Card.Content>
         </Card>
@@ -53,4 +58,4 @@ function Topic({ title, index, searchTerm, topic }) {
   return <React.Fragment>{renderCard()}</React.Fragment>;
 }
 
-export default Topic;
+export default SubTopic;
