@@ -1,10 +1,14 @@
 const axios = require("axios");
 
-export const fetchSubtopics = async (topic, filter, nSubtopics = 10) => {
+export const fetchSubtopics = async (
+  topic,
+  filter = "trending",
+  nSubtopics = 10
+) => {
   try {
     const result = await axios({
       method: "get",
-      url: `https://tws-node-server.herokuapp.com/subtopics?nResults=${nSubtopics}&topic="trending"&&filter=trending`,
+      url: `https://tws-node-server.herokuapp.com/subtopics?nResults=${nSubtopics}&topic=${topic}&&filter=${filter}`,
       headers: { twsKey: process.env.REACT_APP_TWS_KEY },
     });
     return result.data; //result.data is an array of strings, the subtopics

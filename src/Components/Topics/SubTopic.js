@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { Card } from "semantic-ui-react";
@@ -8,12 +8,6 @@ import { fetchArticleIds, fetchSubtopics } from "../../API/twsApi";
 function SubTopic({ title, index, searchTerm, topic, categories }) {
   const history = useHistory();
   const [spinner, setSpinner] = useState(false);
-
-  useEffect(() => {
-    fetchSubtopics(searchTerm, topic).then((res) => {
-      //console.log("This is response", res)
-    });
-  }, []);
 
   const handleOnClick = () => {
     // make Api call to article ids
@@ -48,7 +42,9 @@ function SubTopic({ title, index, searchTerm, topic, categories }) {
           <Card.Content>
             <Card.Header>{topic}</Card.Header>
             <Card.Meta>Category: {displayCategories()}</Card.Meta>
-            <Card.Description>Keyword: {searchTerm}</Card.Description>
+            <Card.Description>
+              {searchTerm ? "Keyword:" + searchTerm : ""}
+            </Card.Description>
           </Card.Content>
         </Card>
       );
