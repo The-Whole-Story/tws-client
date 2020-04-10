@@ -66,12 +66,12 @@ function Header() {
           style={{ color: "#5DC3DE " }}
         />
 
-        <Menu.Item
+        {/* <Menu.Item
           name="item"
           active={activeItem === "Account"}
           onClick={() => handleItemClick("Account")}
           style={{ color: "#5DC3DE " }}
-        />
+        /> */}
         <Dropdown
           text="Politics 101"
           pointing

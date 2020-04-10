@@ -10,8 +10,8 @@ function SubTopic({ title, index, searchTerm, topic, categories }) {
   const [spinner, setSpinner] = useState(false);
 
   const capitalizeTopic = (str) => {
-    return str.replace(/(^| )./g, s => s.toUpperCase());
-  }
+    return str.replace(/(^| )./g, (s) => s.toUpperCase());
+  };
 
   const handleOnClick = () => {
     setSpinner(true);
@@ -43,7 +43,9 @@ function SubTopic({ title, index, searchTerm, topic, categories }) {
         >
           <Card.Content>
             <Card.Header>{capitalizeTopic(topic)}</Card.Header>
-            <Card.Meta>Category: {displayCategories()}</Card.Meta>
+            <Card.Meta>
+              <strong>Category:</strong> {displayCategories()}
+            </Card.Meta>
             <Card.Description>
               {searchTerm ? "Keyword: " + searchTerm : ""}
             </Card.Description>
