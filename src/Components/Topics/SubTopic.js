@@ -22,7 +22,7 @@ function SubTopic({ title, index, searchTerm, topic, categories }) {
     );
   };
   const displayCategories = () => {
-    return categories && categories.map((category) => category);
+    return categories && categories.map((category) => category + " ");
   };
   const renderCard = () => {
     if (spinner) {
