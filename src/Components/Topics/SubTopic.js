@@ -9,6 +9,10 @@ function SubTopic({ title, index, searchTerm, topic, categories }) {
   const history = useHistory();
   const [spinner, setSpinner] = useState(false);
 
+  const capitalizeTopic = (str) => {
+    return str.replace(/(^| )./g, s => s.toUpperCase());
+  }
+
   const handleOnClick = () => {
     setSpinner(true);
     fetchArticleIds(`${searchTerm} ${topic}`).then((articleIds) => {
@@ -38,7 +42,7 @@ function SubTopic({ title, index, searchTerm, topic, categories }) {
           className="animated rollIn"
         >
           <Card.Content>
-            <Card.Header>{topic}</Card.Header>
+            <Card.Header>{capitalizeTopic(topic)}</Card.Header>
             <Card.Meta>Category: {displayCategories()}</Card.Meta>
             <Card.Description>
               {searchTerm ? "Keyword: " + searchTerm : ""}
