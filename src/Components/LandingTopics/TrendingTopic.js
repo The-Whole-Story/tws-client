@@ -14,10 +14,10 @@ function TrendingTopic({ title }) {
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
-    fetchSubtopics("trending", "trending", 3).then((subtopics) => {
+    fetchSubtopics("trending", "trending", 7).then((subtopics) => {
       console.log(subtopics);
       if (subtopics) {
-        setTopics(subtopics.slice(0, 3));
+        setTopics(subtopics.slice(4, 7));
       }
     });
   }, []);

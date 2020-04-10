@@ -14,10 +14,10 @@ function PositiveTopic({ title }) {
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
-    fetchSubtopics("fireman", "positive", 3).then((subtopics) => {
+    fetchSubtopics("fireman", "positive", 6).then((subtopics) => {
       console.log(subtopics);
       if (subtopics) {
-        setTopics(subtopics.slice(0, 3));
+        setTopics(subtopics.slice(3, 6));
       }
     });
   }, []);
