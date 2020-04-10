@@ -56,7 +56,7 @@ function TrendingTopic({ title }) {
                 >
                   <SubTopic
                     topic={topic.name}
-                    categories={topic.categories.slice(0, 10)}
+                    categories={topic.categories}
                     index={index}
                   />
                 </Grid.Column>
