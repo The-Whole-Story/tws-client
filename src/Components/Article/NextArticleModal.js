@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import heroImage from "../../Images/bubble-1.png";
 import {
   Modal,
   Image,
@@ -21,6 +20,11 @@ import WeeklyStandard from "../../Images/logos/Weekly Standard.jpg";
 import GoldMedal from "../../Images/medals/goldMedal.png";
 import SilverMedal from "../../Images/medals/silverMedal.png";
 import BronzeMedal from "../../Images/medals/bronzeMedal.png";
+import hero1 from "../../Images/adImages/hero-1.png";
+import hero2 from "../../Images/adImages/hero-2.png";
+import hero3 from "../../Images/adImages/hero-3.png";
+import hero4 from "../../Images/adImages/hero-4.png";
+import hero5 from "../../Images/adImages/hero-5.png";
 
 const imagesDict = {
   BBC: BBC,
@@ -47,6 +51,8 @@ const modalInfoDict = {
   },
 };
 
+const HEROIMAGES = [hero1, hero2, hero3, hero4, hero5];
+
 const GOALS = [2, 4, 6];
 
 function NextArticleModal({
@@ -64,6 +70,10 @@ function NextArticleModal({
 
   useEffect(() => {});
 
+  const randomHero = () => {
+    const randomIndex = Math.floor(Math.random() * 5);
+    return HEROIMAGES[randomIndex];
+  };
   const handleClick = () => {
     setArticleIndex(articleIndex + 1);
     localStorage.setItem("currentArticleIndex", articleIndex + 1);
@@ -132,7 +142,7 @@ function NextArticleModal({
           src={
             modalInfoDict[articleIndex]
               ? modalInfoDict[articleIndex].image
-              : heroImage
+              : randomHero()
           }
         />
         <Modal.Description class="modalDesc" style={{ paddingLeft: "0" }}>
