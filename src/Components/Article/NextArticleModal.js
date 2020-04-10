@@ -63,7 +63,7 @@ function NextArticleModal({
   };
 
   const displayProgress = () => {
-    if (!GOALS.includes(articleIndex) && goal > 1 && goal <= 6) {
+    if (!GOALS.includes(articleIndex) && goal > 1 && articleIndex < 6) {
       console.log(
         "goal : ",
         goal,
