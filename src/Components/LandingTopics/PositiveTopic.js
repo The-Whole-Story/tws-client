@@ -8,19 +8,16 @@ import {
   Icon,
 } from "semantic-ui-react";
 import SubTopic from "../Topics/SubTopic";
-import { fetchSubtopics } from "../../API/twsApi";
 
 function PositiveTopic({ title }) {
-  const [topics, setTopics] = useState([]);
-
-  useEffect(() => {
-    fetchSubtopics("fireman", "positive", 6).then((subtopics) => {
-      console.log(subtopics);
-      if (subtopics) {
-        setTopics(subtopics.slice(3, 6));
-      }
-    });
-  }, []);
+  const [topics, setTopics] = useState([
+    {
+        name: 'Outreach',
+        categories: ['Society, ', 'Heartwarming, ', 'Family & Parenting, ', 'Arts & Entertainment, ', 'Education, ', 'Donate, ', 'Health '],
+    },
+    { name: 'Health Care', categories: ['Workers, ', 'Health, ', 'Applause, ', 'Appreciation, ', 'Italy, ', 'Stabilization, ', 'Economy, ', 'Heroes ']},
+    { name: 'Cure', categories: ['Development, ', 'Vaccine, ', 'Bill Gates, ', 'Production, ', 'Philanthropy, ','Urgent, ', 'Economics, ', 'Potential '] },
+]);
 
   const renderCards = () => {
     if (topics.length === 0) {
@@ -58,7 +55,7 @@ function PositiveTopic({ title }) {
                 >
                   <SubTopic
                     topic={topic.name}
-                    categories={topic.categories.slice(0, 10)}
+                    categories={topic.categories}
                     index={index}
                   />
                 </Grid.Column>
