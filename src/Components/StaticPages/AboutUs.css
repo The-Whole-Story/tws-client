@@ -1,0 +1,29 @@
+h2 {
+  color: #5dc3de;
+  font-family: Montserrat !important;
+  margin-top: 40px !important;
+}
+
+#main {
+  text-align: center;
+  font-style: oblique;
+  font-weight: bold;
+  padding: 25px;
+}
+
+#header {
+  text-align: center;
+  font-size: 30px;
+}
+
+p {
+  font-family: Yantramanav;
+  font-size: 18px;
+}
+
+/* fontFamily: "Montserrat" */
+
+/* lineHeight: "26px",
+          fontFamily: "Yantramanav",
+          fontSize: "17px",
+          textIndent: "30px", */

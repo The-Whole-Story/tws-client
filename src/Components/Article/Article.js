@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Header, Icon } from "semantic-ui-react";
+import { Container, Header, Icon, Divider } from "semantic-ui-react";
 import NextArticleModal from "./NextArticleModal";
 import ArticleInfoModal from "./ArticleInfoModal";
 import Spinner from "../Spinner";
@@ -98,12 +98,20 @@ function Article(props) {
       <div
         style={{
           padding: "15px",
-          border: "1px solid black",
-          margin: "20px",
-          marginTop: "40px",
+          // border: "1px solid black",
+          marginTop: "20px",
         }}
       >
-        <Header style={{ fontSize: "16px", fontFamily: "Montserrat" }} as="h5">
+        <Divider></Divider>
+        <Header
+          style={{
+            fontSize: "16px",
+            paddingBottom: "10px",
+            // textAlign: "left",
+            // fontStyle: "italic",
+          }}
+          as="h5"
+        >
           Did you like this article?
         </Header>
         <img
@@ -119,6 +127,7 @@ function Article(props) {
           onClick={() => handleClickArrow("Down")}
         ></img>
       </div>
+      <Divider></Divider>
 
       <NextArticleModal
         goal={goal}
