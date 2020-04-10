@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import {
   Header,
@@ -6,16 +6,16 @@ import {
   Input,
   Grid,
   Divider,
-  Form
+  Form,
 } from "semantic-ui-react";
 
 function SearchInput({ updateSearchTerm }) {
   const history = useHistory();
   const [inputValue, setInputValue] = React.useState("");
-  const handleSearchChange = event => {
+  const handleSearchChange = (event) => {
     setInputValue(event.target.value);
   };
-  const handleOnSubmit = event => {
+  const handleOnSubmit = (event) => {
     event.preventDefault();
     updateSearchTerm(inputValue);
     setInputValue("");
@@ -37,7 +37,7 @@ function SearchInput({ updateSearchTerm }) {
                     display: "flex",
                     textAlign: "center",
                     alignItems: "center",
-                    justifyContent: "center"
+                    justifyContent: "center",
                   }}
                   value={inputValue}
                   onChange={handleSearchChange}

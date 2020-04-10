@@ -7,7 +7,7 @@ import { Image, Menu, Dropdown } from "semantic-ui-react";
 
 function Header() {
   const [activeItem, setActiveItem] = useState("");
-  const [modalCount, setModalCount] = useState(false);
+  // const [modalCount, setModalCount] = useState(false);
   const history = useHistory();
 
   const handleItemClick = (active) => {
