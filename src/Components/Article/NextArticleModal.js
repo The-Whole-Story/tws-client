@@ -86,6 +86,11 @@ function NextArticleModal({
           }
         />
         <Modal.Description>
+          {modalInfoDict[articleIndex] ? (
+            <h1>{modalInfoDict[articleIndex].message}</h1>
+          ) : (
+            ""
+          )}
           <Header>Are you suprised you {vote} voted this article?</Header>
           <Header>Move to the next article to get the whole story.</Header>
           <Progress
