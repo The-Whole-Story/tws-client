@@ -43,7 +43,7 @@ function SubTopic({ title, index, searchTerm, topic, categories }) {
             <Card.Header>{topic}</Card.Header>
             <Card.Meta>Category: {displayCategories()}</Card.Meta>
             <Card.Description>
-              {searchTerm ? "Keyword:" + searchTerm : ""}
+              {searchTerm ? "Keyword: " + searchTerm : ""}
             </Card.Description>
           </Card.Content>
         </Card>

@@ -56,25 +56,27 @@ function Header() {
         pointing
         secondary
       >
+        {/* #A9E0EF */}
         <Menu.Item
           as={Link}
           to="/about"
           name="About"
           active={activeItem === "about"}
           onClick={() => handleItemClick("about")}
-          style={{ color: "#a084ff" }}
+          style={{ color: "#5DC3DE " }}
         />
+
         <Menu.Item
           name="item"
           active={activeItem === "Account"}
           onClick={() => handleItemClick("Account")}
-          style={{ color: "#a084ff" }}
+          style={{ color: "#5DC3DE " }}
         />
         <Dropdown
           text="Politics 101"
           pointing
           className="link item"
-          style={{ color: "#a084ff" }}
+          style={{ color: "#5DC3DE " }}
         >
           <Dropdown.Menu>
             <Dropdown.Item

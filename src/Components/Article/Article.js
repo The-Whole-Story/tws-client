@@ -4,8 +4,8 @@ import NextArticleModal from "./NextArticleModal";
 import ArticleCountModal from "./ArticleCountModal";
 import Spinner from "../Spinner";
 import { fetchArticlesById } from "../../API/twsApi";
-import good from "../../good.png";
-import bad from "../../bad.png";
+import good from "../../Images/good.png";
+import bad from "../../Images/bad.png";
 
 function Article(props) {
   const [spinner, setSpinner] = useState(false);
