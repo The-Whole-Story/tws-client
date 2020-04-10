@@ -138,14 +138,14 @@ function NextArticleModal({
         <Image
           wrapped
           size="medium"
-          style={{ marginLeft: "13%" }}
+          style={{ marginLeft: "15px" }}
           src={
             modalInfoDict[articleIndex]
               ? modalInfoDict[articleIndex].image
               : randomHero()
           }
         />
-        <Modal.Description class="modalDesc" style={{ paddingLeft: "0" }}>
+        <Modal.Description class="modalDesc">
           {modalInfoDict[articleIndex] ? (
             <h1>{modalInfoDict[articleIndex].message}</h1>
           ) : (

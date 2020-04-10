@@ -32,3 +32,7 @@ body {
 .modalDesc {
   font-family: Montserrat;
 }
+
+.modalButton {
+  background-color: #5dc3de;
+}

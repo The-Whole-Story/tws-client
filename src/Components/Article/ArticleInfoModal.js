@@ -8,7 +8,7 @@ import {
   Button,
   Icon,
 } from "semantic-ui-react";
-import heroImage from "../../Images/echochamber-01.png";
+// import heroImage from "../../Images/echochamber-01.png";
 
 function ArticleInfoModal({ modal, closeModal, description }) {
   const [count, setCount] = useState(3);
@@ -22,13 +22,17 @@ function ArticleInfoModal({ modal, closeModal, description }) {
     <Modal open={modal} onClose={closeModal}>
       <Modal.Header> Why no titles ?</Modal.Header>
       <Modal.Content image>
-        <Image wrapped size="medium" src={heroImage} />
+        <Image wrapped size="medium" />
         <Modal.Description>
           <Header>{description}</Header>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
-        <Button onClick={handleClick} primary>
+        <Button
+          style={{ backgroundColor: "#5dc3de" }}
+          onClick={handleClick}
+          primary
+        >
           Don't show this again <Icon name="chevron right" />
         </Button>
       </Modal.Actions>
