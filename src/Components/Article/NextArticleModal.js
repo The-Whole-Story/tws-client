@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import heroImage from "../../Images/bubble-1.png";
-import { Modal, Image, Progress, Icon, Header } from "semantic-ui-react";
+import {
+  Modal,
+  Image,
+  Progress,
+  Icon,
+  Header,
+  Divider,
+} from "semantic-ui-react";
 import arrow from "../../Images/arrow.png";
 import BBC from "../../Images/logos/BBC.jpg";
 import NationalReview from "../../Images/logos/National Review.jpg";
@@ -12,6 +19,8 @@ import TheWashingtonPost from "../../Images/logos/The Washington Post.jpg";
 import WallStreetJournal from "../../Images/logos/Wall Street Journal.jpg";
 import WeeklyStandard from "../../Images/logos/Weekly Standard.jpg";
 import GoldMedal from "../../Images/medals/goldMedal.png";
+import SilverMedal from "../../Images/medals/silverMedal.png";
+import BronzeMedal from "../../Images/medals/bronzeMedal.png";
 
 const imagesDict = {
   BBC: BBC,
@@ -25,16 +34,16 @@ const imagesDict = {
 };
 const modalInfoDict = {
   "2": {
-    image: GoldMedal,
-    message: "blah blah blah",
+    image: BronzeMedal,
+    message: "You're a beginner on this topic!",
   },
   "4": {
-    image: GoldMedal,
-    message: "blah blah blah",
+    image: SilverMedal,
+    message: "You're an intermmediate on this topic!",
   },
   "6": {
     image: GoldMedal,
-    message: "blah blah blah",
+    message: "You're an expert on this topic!",
   },
 };
 
@@ -119,13 +128,14 @@ function NextArticleModal({
         <Image
           wrapped
           size="medium"
+          style={{ marginLeft: "13%" }}
           src={
             modalInfoDict[articleIndex]
               ? modalInfoDict[articleIndex].image
               : heroImage
           }
         />
-        <Modal.Description>
+        <Modal.Description class="modalDesc" style={{ paddingLeft: "0" }}>
           {modalInfoDict[articleIndex] ? (
             <h1>{modalInfoDict[articleIndex].message}</h1>
           ) : (

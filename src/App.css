@@ -28,3 +28,7 @@ body {
 .thumbs:hover {
   background-color: black;
 }
+
+.modalDesc {
+  font-family: Montserrat;
+}
