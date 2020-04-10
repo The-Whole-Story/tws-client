@@ -8,19 +8,16 @@ import {
   Icon,
 } from "semantic-ui-react";
 import SubTopic from "../Topics/SubTopic";
-import { fetchSubtopics } from "../../API/twsApi";
 
 function PoliticsTopic({ title }) {
-  const [topics, setTopics] = useState([]);
-
-  useEffect(() => {
-    fetchSubtopics("trump", "politics", 3).then((subtopics) => {
-      console.log(subtopics);
-      if (subtopics) {
-        setTopics(subtopics.slice(0, 3));
-      }
-    });
-  }, []);
+  const [topics, setTopics] = useState([
+    {
+        name: 'Donald Trump',
+        categories: ['Law, ', 'Gov’t & Politics, ', 'U.S. Government Resources, ', 'Health, ', 'Business, ', 'Testing, ', 'Epidemic '],
+    },
+    { name: 'Joe Biden', categories: ['Election, ', 'Healthcare, ', 'Front-runner, ', 'Unemployment, ', 'Corona, ', 'Outreach, ', 'Economy']},
+    { name: 'Senate', categories: ['Spending, ', 'Relief, ', 'Stimulus, ', 'Testing, ', 'Emergency, ','Finance, ', 'Economics, ', 'Gov’t & Politics '] },
+]);
 
   const renderCards = () => {
     if (topics.length === 0) {
@@ -58,7 +55,7 @@ function PoliticsTopic({ title }) {
                 >
                   <SubTopic
                     topic={topic.name}
-                    categories={topic.categories.slice(0, 10)}
+                    categories={topic.categories}
                     index={index}
                   />
                 </Grid.Column>

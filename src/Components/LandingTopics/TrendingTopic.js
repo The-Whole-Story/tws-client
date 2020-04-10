@@ -11,16 +11,14 @@ import SubTopic from "../Topics/SubTopic";
 import { fetchSubtopics } from "../../API/twsApi";
 
 function TrendingTopic({ title }) {
-  const [topics, setTopics] = useState([]);
-
-  useEffect(() => {
-    fetchSubtopics("trending", "trending", 7).then((subtopics) => {
-      console.log(subtopics);
-      if (subtopics) {
-        setTopics(subtopics.slice(4, 7));
-      }
-    });
-  }, []);
+  const [topics, setTopics] = useState([
+    {
+        name: 'Coronavirus',
+        categories: ['Pandemic, ', 'Gov’t & Politics, ', 'Outbreak, ', 'Environmental, ', 'Business, ', 'Instability, ', 'Society '],
+    },
+    { name: 'Technology', categories: ['Cobol, ', 'Hackathons, ', 'Development, ', 'Remote, ', 'Corona, ', 'Pandemic, ', 'Golang']},
+    { name: 'Streaming', categories: ['High Traffic, ', 'Entertainment, ', 'Tiger King, ', 'Netflix, ', 'Amazon, ','Demand, ', 'Technology, ', 'Business '] },
+]);
 
   const renderCards = () => {
     if (topics.length === 0) {
@@ -58,7 +56,7 @@ function TrendingTopic({ title }) {
                 >
                   <SubTopic
                     topic={topic.name}
-                    categories={topic.categories.slice(0, 10)}
+                    categories={topic.categories}
                     index={index}
                   />
                 </Grid.Column>
