@@ -17,6 +17,8 @@ function Article(props) {
   const [articleCount, setArticleCount] = useState(0);
   const [nextArticleId, setNextArticleId] = useState("");
 
+  const [goal, setGoal] = useState(0);
+
   const [modalNext, setModalNext] = useState(false);
   const [modalInfo, setModalInfo] = useState(false);
 
@@ -29,18 +31,15 @@ function Article(props) {
   const closeModalInfo = () => setModalInfo(false);
 
   const handleClickArrow = (direction) => {
-    if (articleIndex < articleCount - 1) {
-      const articleChain = JSON.parse(localStorage.getItem("articleChain"));
-      setArticleIndex(
-        parseInt(JSON.parse(localStorage.getItem("currentArticleIndex")))
-      );
-      setNextArticleId(articleChain[articleIndex + 1]);
-      setVote(direction);
-      openModalNext();
-    } else {
-      alert("you got to the end");
-    }
+    const articleChain = JSON.parse(localStorage.getItem("articleChain"));
+    setArticleIndex(
+      parseInt(JSON.parse(localStorage.getItem("currentArticleIndex")))
+    );
+    setNextArticleId(articleChain[articleIndex + 1]);
+    setVote(direction);
+    openModalNext();
   };
+
   useEffect(() => {
     const firstTimeArticle = JSON.parse(
       localStorage.getItem("firstTimeArticle")
@@ -48,7 +47,10 @@ function Article(props) {
     if (!firstTimeArticle) {
       openModalInfo();
     }
-    setArticleCount(parseInt(JSON.parse(localStorage.getItem("count"))));
+    if (articleIndex < 2) setGoal(2);
+    if (articleIndex > 2 && articleCount < 4) setGoal(4);
+    if (articleIndex > 4 && articleCount < 6) setGoal(6);
+    //setArticleCount(parseInt(JSON.parse(localStorage.getItem("count"))));
     setSpinner(true);
     fetchArticlesById(props.match.params.articleId).then((article) => {
       console.log("in articles : ", article);
@@ -60,7 +62,7 @@ function Article(props) {
         setSource(article[0].source.name);
       }
       setSpinner(false);
-    });
+    }, []);
 
     // if there is a count API call to recieve first article
   }, [props.match.params.articleId]);
@@ -128,6 +130,7 @@ function Article(props) {
       <Divider></Divider>
 
       <NextArticleModal
+        goal={goal}
         setArticleIndex={setArticleIndex}
         articleIndex={articleIndex}
         articleCount={articleCount}
