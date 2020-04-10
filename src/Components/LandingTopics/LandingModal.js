@@ -16,17 +16,12 @@ function LandingModal({ modal, closeModal }) {
       </Modal.Header>
       <Modal.Content>
         <Modal.Description>
-          Articles presented on the home page contain a topic and related
-          categories. Upon clicking on a card you would be presented with a
-          chain of articles from different credible sources having to do with
-          the topic and categories mentioned. As a user, you can choose a topic
-          selected for you, or search for your own. Unlike other sites that
-          redirect you to a list of flashy article titles designed to grab your
-          attention, The Whole Story’s search will lead to a list of subtopics,
-          where you can choose any topic that interests you free of any external
-          influences. You will then be served a group of articles, all centered
-          around your chosen topic, where the articles come from different
-          perspectives and sources so that you can grasp the whole story.
+        Welcome to The Whole Story!
+        We believe in encouraging you to form your own opinions while also pushing you to challenge your existing views on topics of interest, so we've stripped away all possibilities of sensationalization that aim to influence your beliefs.
+        Cards hide articles behind them—you choose a topic which displays only raw information about the contents behind it, and we'll serve you a list of articles from different credible sources and perspectives about that topic. In reading each article, you gain a side of the story, but only from gathering the different perspectives can you get the whole story and become well informed.
+        Ready to get the whole story? Click on any of the topics behind this card, or search for your own and choose a subtopic!
+        To learn more visit our “About” page!
+
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
