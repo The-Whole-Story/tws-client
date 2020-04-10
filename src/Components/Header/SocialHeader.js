@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import ArticleCountModal from "../Article/ArticleCountModal";
+// import ArticleCountModal from "../Article/ArticleCountModal";
 import { Link } from "react-router-dom";
 
 function Header() {
-  const [modalCount, setModalCount] = useState(false);
+  // const [modalCount, setModalCount] = useState(false);
 
-  const openModalCount = () => setModalCount(true);
-  const closeModalCount = () => setModalCount(false);
+  // const openModalCount = () => setModalCount(true);
+  // const closeModalCount = () => setModalCount(false);
 
   const handleItemClick = () => {
-    openModalCount();
+    // openModalCount();
   };
 
   return (
@@ -19,7 +19,7 @@ function Header() {
           className="ui container"
           style={{
             width: "100vw",
-            padding: "0 15px"
+            padding: "0 15px",
           }}
         >
           <a
@@ -30,7 +30,7 @@ function Header() {
             <i
               className="facebook f icon"
               style={{
-                margin: "0 6px"
+                margin: "0 6px",
               }}
             ></i>
           </a>
@@ -42,7 +42,7 @@ function Header() {
             <i
               className="twitter icon"
               style={{
-                margin: "0 6px"
+                margin: "0 6px",
               }}
             ></i>
           </a>
@@ -54,7 +54,7 @@ function Header() {
             <i
               className="instagram  icon"
               style={{
-                margin: "0 6px"
+                margin: "0 6px",
               }}
             ></i>
           </a>
@@ -64,7 +64,7 @@ function Header() {
                 <i
                   style={{
                     paddingTop: "5px",
-                    marginRight: "-2px"
+                    marginRight: "-2px",
                   }}
                   className="mail outline icon"
                 ></i>
@@ -76,12 +76,12 @@ function Header() {
           </div>
         </div>
       </div>
-      <ArticleCountModal
+      {/* <ArticleCountModal
         header="Edit the number of articles"
         description="To continue please enter the number of articles you would like to be served"
         modal={modalCount}
         closeModal={closeModalCount}
-      />
+      /> */}
     </React.Fragment>
   );
 }

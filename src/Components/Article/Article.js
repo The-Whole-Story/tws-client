@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Header, Icon } from "semantic-ui-react";
 import NextArticleModal from "./NextArticleModal";
-import ArticleCountModal from "./ArticleCountModal";
+import ArticleInfoModal from "./ArticleInfoModal";
 import Spinner from "../Spinner";
 import { fetchArticlesById } from "../../API/twsApi";
 import good from "../../Images/good.png";
@@ -15,19 +15,18 @@ function Article(props) {
 
   const [articleIndex, setArticleIndex] = useState(0);
   const [articleCount, setArticleCount] = useState(0);
-  // const [articleChain, setArticleChain] = useState([]);
   const [nextArticleId, setNextArticleId] = useState("");
 
   const [modalNext, setModalNext] = useState(false);
-  const [modalCount, setModalCount] = useState(false);
+  const [modalInfo, setModalInfo] = useState(false);
 
   const [vote, setVote] = useState("");
 
   const openModalNext = () => setModalNext(true);
   const closeModalNext = () => setModalNext(false);
 
-  // const openModalCount = () => setModalCount(true);
-  // const closeModalCount = () => setModalCount(false);
+  const openModalInfo = () => setModalInfo(true);
+  const closeModalInfo = () => setModalInfo(false);
 
   const handleClickArrow = (direction) => {
     if (articleIndex < articleCount - 1) {
@@ -43,10 +42,12 @@ function Article(props) {
     }
   };
   useEffect(() => {
-    const count = JSON.parse(localStorage.getItem("count"));
-    // if (!count) {
-    //   openModalCount();
-    // }
+    const firstTimeArticle = JSON.parse(
+      localStorage.getItem("firstTimeArticle")
+    );
+    if (!firstTimeArticle) {
+      openModalInfo();
+    }
     setArticleCount(parseInt(JSON.parse(localStorage.getItem("count"))));
     setSpinner(true);
     fetchArticlesById(props.match.params.articleId).then((article) => {
@@ -81,7 +82,7 @@ function Article(props) {
           {publishedAt}
         </Header.Subheader>
       </Header>
-      <p
+      <div
         style={{
           textAlign: "left",
           lineHeight: "26px",
@@ -91,7 +92,7 @@ function Article(props) {
         }}
       >
         {renderAricle()}
-      </p>
+      </div>
       <div
         style={{
           padding: "15px",
@@ -127,14 +128,14 @@ function Article(props) {
         modal={modalNext}
         closeModal={closeModalNext}
       />
-      {/* <ArticleCountModal
+      <ArticleInfoModal
         setArticleCount={setArticleCount}
         articleCount={articleCount}
         header="How many articles to get the whole story?"
         description="To continue please enter the number of articles you would like to be served"
-        modal={modalCount}
-        closeModal={closeModalCount}
-      /> */}
+        modal={modalInfo}
+        closeModal={closeModalInfo}
+      />
     </Container>
   );
 }

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Logo from "../../TWS-main-logo.png";
 import { Image, Menu, Dropdown } from "semantic-ui-react";
-import ArticleCountModal from "../Article/ArticleCountModal";
+// import ArticleCountModal from "../Article/ArticleCountModal";
 
 function Header() {
   const [activeItem, setActiveItem] = useState("");
@@ -17,8 +17,8 @@ function Header() {
     // }
   };
 
-  const openModalCount = () => setModalCount(true);
-  const closeModalCount = () => setModalCount(false);
+  // const openModalCount = () => setModalCount(true);
+  // const closeModalCount = () => setModalCount(false);
 
   useEffect(() => {
     const active = history.location.pathname.slice(1);
@@ -91,12 +91,12 @@ function Header() {
           </Dropdown.Menu>
         </Dropdown>
       </Menu>
-      <ArticleCountModal
+      {/* <ArticleCountModal
         header="Edit the number of articles"
         description="To continue please enter the number of articles you would like to be served"
         modal={modalCount}
         closeModal={closeModalCount}
-      />
+      /> */}
     </React.Fragment>
   );
 }
