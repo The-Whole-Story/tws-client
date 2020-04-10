@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Topic from "./Topics/Topic";
 import PoliticsTopic from "./LandingTopics/PoliticsTopic";
 import PositiveTopic from "./LandingTopics/PositiveTopic";
@@ -7,17 +7,24 @@ import { Header, Grid } from "semantic-ui-react";
 import LandingModal from "./LandingTopics/LandingModal";
 
 function LandingPage() {
-  const [modalNext, setModalNext] = useState(false);
+  const [modal, setModal] = useState(false);
 
-  const openModalNext = () => setModalNext(true);
-  const closeModalNext = () => setModalNext(false);
+  const openModal = () => setModal(true);
+  const closeModal = () => setModal(false);
+
+  useEffect(() => {
+    const firstTimeToSite = JSON.parse(localStorage.getItem("firstTimeToSite"));
+    if (!firstTimeToSite) {
+      openModal();
+    }
+  }, []);
 
   return (
     <React.Fragment>
       <PoliticsTopic title={"Politics"} />
       <TrendingTopic title={"Trending"} />
       <PositiveTopic title={"Positive"} />
-      <LandingModal modal={modalNext} closeModal={closeModalNext} />
+      <LandingModal modal={modal} closeModal={closeModal} />
     </React.Fragment>
   );
 }

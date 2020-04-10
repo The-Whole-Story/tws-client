@@ -3,6 +3,40 @@ import { useHistory } from "react-router-dom";
 import heroImage from "../../Images/bubble-1.png";
 import { Modal, Image, Progress, Icon, Header } from "semantic-ui-react";
 import arrow from "../../Images/arrow.png";
+import BBC from "../../Images/logos/BBC.jpg";
+import NationalReview from "../../Images/logos/National Review.jpg";
+import TheEconomist from "../../Images/logos/The Economist.jpg";
+import TheLosAngelesTimes from "../../Images/logos/The Los Angeles Times.jpg";
+import TheNewYorkTimes from "../../Images/logos/The New York Times.jpg";
+import TheWashingtonPost from "../../Images/logos/The Washington Post.jpg";
+import WallStreetJournal from "../../Images/logos/Wall Street Journal.jpg";
+import WeeklyStandard from "../../Images/logos/Weekly Standard.jpg";
+import GoldMedal from "../../Images/medals/goldMedal.png";
+
+const imagesDict = {
+  BBC: BBC,
+  "National Review": NationalReview,
+  "The Economist": TheEconomist,
+  "The Los Angeles Times": TheLosAngelesTimes,
+  "The New York Times": TheNewYorkTimes,
+  "The Washington Post": TheWashingtonPost,
+  "Wall Street Journal": WallStreetJournal,
+  "Weekly Standard": WeeklyStandard,
+};
+const modalInfoDict = {
+  "2": {
+    image: GoldMedal,
+    message: "blah blah blah",
+  },
+  "4": {
+    image: GoldMedal,
+    message: "blah blah blah",
+  },
+  "6": {
+    image: GoldMedal,
+    message: "blah blah blah",
+  },
+};
 
 function NextArticleModal({
   modal,
@@ -32,15 +66,31 @@ function NextArticleModal({
           The source of this article is...
         </p>
         <center>
-          <Image
-            size="large"
-            src={process.env.PUBLIC_URL + `/Images/logos/${source}.jpg`}
-          />
+          {console.log(
+            "image dic",
+            imagesDict[source],
+            "this is source: ",
+            source
+          )}
+          <Image size="large" src={imagesDict[source]} />
         </center>
       </Modal.Header>
       <Modal.Content image>
-        <Image wrapped size="medium" src={heroImage} />
+        <Image
+          wrapped
+          size="medium"
+          src={
+            modalInfoDict[articleIndex]
+              ? modalInfoDict[articleIndex].image
+              : heroImage
+          }
+        />
         <Modal.Description>
+          {modalInfoDict[articleIndex] ? (
+            <h1>{modalInfoDict[articleIndex].message}</h1>
+          ) : (
+            ""
+          )}
           <Header>Are you suprised you {vote} voted this article?</Header>
           <Header>Move to the next article to get the whole story.</Header>
           <Progress
@@ -58,12 +108,6 @@ function NextArticleModal({
               src={arrow}
               onClick={handleClick}
             ></img>
-            {/* <Icon
-              size="huge"
-              name="chevron circle right"
-              color="grey"
-            
-            ></Icon> */}
           </div>
         </Modal.Description>
       </Modal.Content>

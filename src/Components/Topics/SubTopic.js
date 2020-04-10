@@ -9,17 +9,19 @@ function SubTopic({ title, index, searchTerm, topic, categories }) {
   const history = useHistory();
   const [spinner, setSpinner] = useState(false);
 
+  const capitalizeTopic = (str) => {
+    return str.replace(/(^| )./g, s => s.toUpperCase());
+  }
+
   const handleOnClick = () => {
-    // make Api call to article ids
     setSpinner(true);
-    const articleCount = JSON.parse(localStorage.getItem("count"));
-    fetchArticleIds(`${searchTerm} ${topic}`, articleCount).then(
-      (articleIds) => {
-        localStorage.setItem("articleChain", JSON.stringify(articleIds));
-        localStorage.setItem("currentArticleIndex", JSON.stringify(0));
-        history.push(`/article/${articleIds[0]}`);
-      }
-    );
+    fetchArticleIds(`${searchTerm} ${topic}`).then((articleIds) => {
+      console.log("articleIds: ", articleIds);
+      localStorage.setItem("articleChain", JSON.stringify(articleIds));
+      localStorage.setItem("count", JSON.stringify(articleIds.length));
+      localStorage.setItem("currentArticleIndex", JSON.stringify(0));
+      history.push(`/article/${articleIds[0]}`);
+    });
   };
   const displayCategories = () => {
     return categories && categories.map((category) => category + " ");
@@ -40,7 +42,7 @@ function SubTopic({ title, index, searchTerm, topic, categories }) {
           className="animated rollIn"
         >
           <Card.Content>
-            <Card.Header>{topic}</Card.Header>
+            <Card.Header>{capitalizeTopic(topic)}</Card.Header>
             <Card.Meta>Category: {displayCategories()}</Card.Meta>
             <Card.Description>
               {searchTerm ? "Keyword: " + searchTerm : ""}
