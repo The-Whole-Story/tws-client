@@ -38,7 +38,10 @@ const modalInfoDict = {
   },
 };
 
+const GOALS = [2, 4, 6];
+
 function NextArticleModal({
+  goal,
   modal,
   closeModal,
   vote,
@@ -57,6 +60,43 @@ function NextArticleModal({
     localStorage.setItem("currentArticleIndex", articleIndex + 1);
     history.push(`/article/${nextArticleId}`);
     closeModal();
+  };
+
+  const displayProgress = () => {
+    if (!GOALS.includes(articleIndex) && goal > 1 && goal < 6) {
+      console.log(
+        "goal : ",
+        goal,
+        " index : ",
+        articleIndex,
+        " current : ",
+        articleIndex
+      );
+      return (
+        <Progress
+          value={articleIndex}
+          total={goal}
+          progress="ratio"
+          active
+          style={{ fontFamily: "Yantramanav" }}
+          autoSuccess
+        >
+          {goal - articleIndex} away from the goal.
+        </Progress>
+      );
+    }
+    if (articleIndex > 6) {
+      return (
+        <Progress
+          percent={100}
+          autoSuccess
+          active
+          style={{ fontFamily: "Yantramanav" }}
+        >
+          You're amazing !
+        </Progress>
+      );
+    }
   };
 
   return (
@@ -93,15 +133,7 @@ function NextArticleModal({
           )}
           <Header>Are you suprised you {vote} voted this article?</Header>
           <Header>Move to the next article to get the whole story.</Header>
-          <Progress
-            value={articleIndex + 1}
-            total={articleCount}
-            progress="ratio"
-            active
-            style={{ fontFamily: "Yantramanav" }}
-          >
-            You're almost there!
-          </Progress>
+          {displayProgress()}
           <div style={{ textAlign: "right", paddingTop: "10px" }}>
             <img
               style={{ width: "60px", cursor: "pointer" }}
