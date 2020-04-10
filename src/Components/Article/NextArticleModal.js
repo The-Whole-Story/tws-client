@@ -32,7 +32,10 @@ function NextArticleModal({
           The source of this article is...
         </p>
         <center>
-          <Image size="large" src={`/Images/logos/${source}.jpg`} />
+          <Image
+            size="large"
+            src={process.env.PUBLIC_URL + `/Images/logos/${source}.jpg`}
+          />
         </center>
       </Modal.Header>
       <Modal.Content image>
