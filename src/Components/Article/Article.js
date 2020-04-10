@@ -26,8 +26,8 @@ function Article(props) {
   const openModalNext = () => setModalNext(true);
   const closeModalNext = () => setModalNext(false);
 
-  const openModalCount = () => setModalCount(true);
-  const closeModalCount = () => setModalCount(false);
+  // const openModalCount = () => setModalCount(true);
+  // const closeModalCount = () => setModalCount(false);
 
   const handleClickArrow = (direction) => {
     if (articleIndex < articleCount - 1) {
@@ -127,14 +127,14 @@ function Article(props) {
         modal={modalNext}
         closeModal={closeModalNext}
       />
-      <ArticleCountModal
+      {/* <ArticleCountModal
         setArticleCount={setArticleCount}
         articleCount={articleCount}
         header="How many articles to get the whole story?"
         description="To continue please enter the number of articles you would like to be served"
         modal={modalCount}
         closeModal={closeModalCount}
-      />
+      /> */}
     </Container>
   );
 }

@@ -11,6 +11,32 @@ import TheNewYorkTimes from "../../Images/logos/The New York Times.jpg";
 import TheWashingtonPost from "../../Images/logos/The Washington Post.jpg";
 import WallStreetJournal from "../../Images/logos/Wall Street Journal.jpg";
 import WeeklyStandard from "../../Images/logos/Weekly Standard.jpg";
+import GoldMedal from "../../Images/medals/goldMedal.png";
+
+const imagesDict = {
+  BBC: BBC,
+  "National Review": NationalReview,
+  "The Economist": TheEconomist,
+  "The Los Angeles Times": TheLosAngelesTimes,
+  "The New York Times": TheNewYorkTimes,
+  "The Washington Post": TheWashingtonPost,
+  "Wall Street Journal": WallStreetJournal,
+  "Weekly Standard": WeeklyStandard,
+};
+const modalInfoDict = {
+  "2": {
+    image: GoldMedal,
+    message: "blah blah blah",
+  },
+  "4": {
+    image: GoldMedal,
+    message: "blah blah blah",
+  },
+  "6": {
+    image: GoldMedal,
+    message: "blah blah blah",
+  },
+};
 
 function NextArticleModal({
   modal,
@@ -22,16 +48,6 @@ function NextArticleModal({
   articleIndex,
   setArticleIndex,
 }) {
-  const imagesDict = {
-    BBC: BBC,
-    "National Review": NationalReview,
-    "The Economist": TheEconomist,
-    "The Los Angeles Times": TheLosAngelesTimes,
-    "The New York Times": TheNewYorkTimes,
-    "The Washington Post": TheWashingtonPost,
-    "Wall Street Journal": WallStreetJournal,
-    "Weekly Standard": WeeklyStandard,
-  };
   const history = useHistory();
 
   useEffect(() => {});
@@ -60,7 +76,15 @@ function NextArticleModal({
         </center>
       </Modal.Header>
       <Modal.Content image>
-        <Image wrapped size="medium" src={heroImage} />
+        <Image
+          wrapped
+          size="medium"
+          src={
+            modalInfoDict[articleIndex]
+              ? modalInfoDict[articleIndex].image
+              : heroImage
+          }
+        />
         <Modal.Description>
           <Header>Are you suprised you {vote} voted this article?</Header>
           <Header>Move to the next article to get the whole story.</Header>
@@ -79,12 +103,6 @@ function NextArticleModal({
               src={arrow}
               onClick={handleClick}
             ></img>
-            {/* <Icon
-              size="huge"
-              name="chevron circle right"
-              color="grey"
-            
-            ></Icon> */}
           </div>
         </Modal.Description>
       </Modal.Content>
