@@ -9,6 +9,7 @@ import {
   Icon,
 } from "semantic-ui-react";
 // import heroImage from "../../Images/echochamber-01.png";
+import cardPic from "../../Images/modal-02.png";
 
 function ArticleInfoModal({ modal, closeModal, description }) {
   const [count, setCount] = useState(3);
@@ -20,11 +21,16 @@ function ArticleInfoModal({ modal, closeModal, description }) {
 
   return (
     <Modal open={modal} onClose={closeModal}>
-      <Modal.Header> Why no titles ?</Modal.Header>
-      <Modal.Content image>
-        <Image wrapped size="medium" />
+      <Modal.Header> Why no titles?</Modal.Header>
+      <Modal.Content>
         <Modal.Description>
-          <Header>Something about articles!</Header>
+          <img style={{ width: "300px", float: "right" }} src={cardPic}></img>
+
+          <p style={{ padding: "55px 0" }}>
+            Titles are designed to capture and steer your attention. We want you
+            to form your own ideas on the topics you are interested in, so we've
+            removed all titles, images, and media related branding.
+          </p>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
