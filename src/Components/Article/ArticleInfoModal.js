@@ -24,7 +24,7 @@ function ArticleInfoModal({ modal, closeModal, description }) {
       <Modal.Content image>
         <Image wrapped size="medium" />
         <Modal.Description>
-          <Header>{description}</Header>
+          <Header>Something about articles!</Header>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
