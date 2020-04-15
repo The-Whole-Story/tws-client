@@ -39,15 +39,15 @@ const imagesDict = {
 const modalInfoDict = {
   "2": {
     image: BronzeMedal,
-    message: "You're a beginner on this topic!",
+    message: "You're a Informed on this topic!",
   },
   "4": {
     image: SilverMedal,
-    message: "You're an intermmediate on this topic!",
+    message: "You're an Expert on this topic!",
   },
   "6": {
     image: GoldMedal,
-    message: "You're an expert on this topic!",
+    message: "You're an Master on this topic!",
   },
 };
 
@@ -93,12 +93,11 @@ function NextArticleModal({
       );
       return (
         <Progress
-          value={articleIndex}
-          total={goal}
+          value={articleIndex + 1}
+          total={goal + 1}
           progress="ratio"
           active
           style={{ fontFamily: "Yantramanav" }}
-          autoSuccess
         >
           {goal - articleIndex} away from the goal.
         </Progress>
@@ -112,7 +111,7 @@ function NextArticleModal({
           active
           style={{ fontFamily: "Yantramanav" }}
         >
-          You're amazing !
+          You're going above and beyond!
         </Progress>
       );
     }
