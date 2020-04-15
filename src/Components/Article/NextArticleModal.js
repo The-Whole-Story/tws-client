@@ -39,7 +39,7 @@ const imagesDict = {
 const modalInfoDict = {
   "2": {
     image: BronzeMedal,
-    message: "You're a Informed on this topic!",
+    message: "You're Informed on this topic!",
   },
   "4": {
     image: SilverMedal,
@@ -47,7 +47,7 @@ const modalInfoDict = {
   },
   "6": {
     image: GoldMedal,
-    message: "You're an Master on this topic!",
+    message: "You're a Master on this topic!",
   },
 };
 
