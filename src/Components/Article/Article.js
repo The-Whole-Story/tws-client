@@ -31,6 +31,7 @@ function Article(props) {
   const closeModalInfo = () => setModalInfo(false);
 
   const handleClickArrow = (direction) => {
+    direction === "Up" ? incrementLeaning() : decrementLeaning()
     const articleChain = JSON.parse(localStorage.getItem("articleChain"));
     setArticleIndex(
       parseInt(JSON.parse(localStorage.getItem("currentArticleIndex")))
@@ -75,6 +76,23 @@ function Article(props) {
     return newBody;
   };
 
+  const sourceLeaning = {
+    "BBC": "neutral",
+    "The Washington Post": "left",
+    "National Review": "right",
+    "The Economist": "left",
+    "The New York Times": "left",
+    "The Los Angeles Times": "left",
+    "Weekly Standard": "right"
+  }
+  const incrementLeaning = () =>{
+    localStorage.setItem(sourceLeaning[source], parseInt(localStorage.getItem(sourceLeaning[source])) + 1);
+  }
+  
+  const decrementLeaning = () =>{
+    localStorage.setItem(sourceLeaning[source], parseInt(localStorage.getItem(sourceLeaning[source])) - 1);
+  }
+  
   return (
     <Container text textAlign="center">
       {console.log(props.location)}

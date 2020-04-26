@@ -9,6 +9,7 @@ import AboutUs from "./Components/StaticPages/AboutUs";
 import Basics from "./Components/StaticPages/Basics";
 import Article from "./Components/Article/Article";
 import footer from "./TWSFooter.png";
+import FaceYourBias from "./Components/FaceYourBias/FaceYourBias";
 
 import "./App.css";
 
@@ -18,6 +19,12 @@ function App() {
     setSearchTerm(query);
   };
   localStorage.setItem("count", 3);
+
+  // left, netural, and right are the reader's scores for left leaning, neutral, and right leaning sources
+  // voting on an article with a _____ leaning source will increment or decrement the user's score for that leaning, respectively
+  localStorage.setItem("left", 0);
+  localStorage.setItem("neutral", 0);
+  localStorage.setItem("right", 0);
 
   return (
     <div className="App">
@@ -35,6 +42,7 @@ function App() {
         <Route path="/about" component={AboutUs} />
         <Route path="/basics" component={Basics} />
         <Route path="/article/:articleId" component={Article} />
+        <Route path="/bias" component={FaceYourBias} />
       </Router>
       <img className="footer" src={footer}></img>
     </div>
